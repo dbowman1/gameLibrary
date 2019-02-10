@@ -1,6 +1,6 @@
-#Dustin Bowman Individual Project
+# Dustin Bowman Individual Project
 
-###Problem Statement
+### Problem Statement
 Games in general have been a popular past time, and there's been
 many different type of ways to keep track of game collections. Each 
 platform have their own respective library but that is only for that specific
