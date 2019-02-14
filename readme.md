@@ -20,7 +20,7 @@ all the information in one place instead of looking in multiple different locati
   * All: anyone can view game information (no login)
 * Database
   * MySQL
-  * Store users and roles
+  * Store users
   * Store all data for games in libraries
 * ORM Framework
   * Hibernate 5
