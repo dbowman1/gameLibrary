@@ -9,3 +9,4 @@
 |2/7/19| 3 | Finished Exercise 2 and watched and read WK3 and worked on EX3|
 |2/12/19|3| Finish up requirements for checkpoint 1 Wireframes, userstories, timelog, readme...|
 |2/14/19|4| Added some initial dao/hibernate prep for project, but will do EX4 for practice| 
+|2/20/19|3| Added generic dao, lombok(getters and setters), added a user database and UnitTesting|
