@@ -34,17 +34,17 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "users", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Set<Role> roles  = new HashSet<>();
-
-    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Set<Game> games = new HashSet<>();
-
-    public void addRole(Role role) {
-        roles.add(role);
-    }
+//    @OneToMany(mappedBy = "users", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+//    @ToString.Exclude
+//    @EqualsAndHashCode.Exclude
+//    private Set<Role> roles  = new HashSet<>();
+//
+//    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
+//    @ToString.Exclude
+//    @EqualsAndHashCode.Exclude
+//    private Set<Game> games = new HashSet<>();
+//
+//    public void addRole(Role role) {
+//        roles.add(role);
+//    }
 }
