@@ -55,5 +55,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-/resources/hibernate.cfg.xml
-/resources/database.properties
+hibernate.cfg.xml
+database.properties
