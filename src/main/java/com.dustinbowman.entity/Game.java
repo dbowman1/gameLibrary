@@ -20,5 +20,6 @@ public class Game {
     @ManyToOne
     @JoinColumn(name = "user")
     private User user;
+    //hi
 
 }
