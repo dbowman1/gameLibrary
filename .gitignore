@@ -5,32 +5,32 @@
 
 ## Directory-based project format:
 .idea/
-# if you remove the above rule, at least ignore the following:
 
+# if you remove the above rule, at least ignore the following:
 # User-specific stuff:
-# .idea/workspace.xml
-# .idea/tasks.xml
-# .idea/dictionaries
-# .idea/shelf
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
 
 # Sensitive or high-churn files:
-# .idea/dataSources.ids
-# .idea/dataSources.xml
-# .idea/sqlDataSources.xml
-# .idea/dynamic.xml
-# .idea/uiDesigner.xml
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
 
 # Gradle:
-# .idea/gradle.xml
-# .idea/libraries
+.idea/gradle.xml
+.idea/libraries
 
 # Mongo Explorer plugin:
-# .idea/mongoSettings.xml
+.idea/mongoSettings.xml
 
 ## File-based project format:
-*.ipr
 *.iws
-
 
 ## Plugin-specific files:
 
@@ -39,9 +39,8 @@
 
 # Maven
 /target/
-/log/
-/lib/
 /logs/
+/lib/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -54,7 +53,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-
 
 hibernate.cfg.xml
 src/main/resources/hibernate.cfg.xml
