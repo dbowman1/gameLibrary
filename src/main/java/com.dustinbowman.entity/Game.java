@@ -2,8 +2,12 @@ package com.dustinbowman.entity;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity(name = "Game")
@@ -17,9 +21,9 @@ public class Game {
     private String title;
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "user")
-    private User user;
-    //hi
+    @ManyToMany(mappedBy = "games")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Set<User> users = new HashSet<>();
 
 }

@@ -1,7 +1,10 @@
 package com.dustinbowman.persistence;
 
+import com.dustinbowman.entity.Game;
+import com.dustinbowman.entity.Role;
 import com.dustinbowman.entity.User;
 import com.dustinbowman.test.util.Database;
+import org.hibernate.Hibernate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -61,20 +64,56 @@ public class UserDaoTest {
         user.setUserName(userNameBeforeUpdate + updateValue);
 
         dao.saveOrUpdate(user);
-
         User updatedUser = (User) dao.getById(id);
         assertEquals(user, updatedUser);
     }
 
+
     @Test
-    public void testInsert() {
+    public void testInsertWithRole() {
         int insertedUser = 0;
         User user = new User();
+        user.setUserName("testUserName");
+        user.setPassword("notarealpass");
+        user.setEmail("notanemail@mail.com");
+
+        Role role = new Role();
+        role.setRole("admin");
+        role.setUser(user);
+
+        user.addRole(role);
+
         insertedUser = dao.insert(user);
         User retrievedUser = (User) dao.getById(insertedUser);
         assertTrue(insertedUser > 0);
         assertEquals(user, retrievedUser);
-
+        assertEquals(1, retrievedUser.getRoles().size());
+        assertTrue(retrievedUser.getRoles().contains(role));
     }
 
+    @Test
+    public void testAddGameWithUser() {
+        User user = new User();
+        user.setUserName("Gandalf");
+        user.setEmail("takinghobbitstoisengar");
+        user.setPassword("password Yo");
+
+        Game game = new Game();
+        game.setTitle("Harry Potter");
+        game.setDescription("not a good game");
+
+        int gameId = 0;
+        GenericDao gameDao = new GenericDao(Game.class);
+        gameId = gameDao.insert(game);
+        Game retrievedGame = (Game) gameDao.getById(gameId);
+        assertEquals(retrievedGame, game);
+
+        user.getGames().add(game);
+        game.getUsers().add(user);
+
+        user.getGames();
+
+
+
+    }
 }

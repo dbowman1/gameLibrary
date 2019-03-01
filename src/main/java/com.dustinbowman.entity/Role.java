@@ -5,7 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Data
-@Entity
+@Entity(name = "Role")
+@Table(name = "roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +15,5 @@ public class Role {
     private String role;
 
     @ManyToOne
-    @JoinColumn(name = "userName",referencedColumnName = "userName", nullable = false)
     private User user;
 }

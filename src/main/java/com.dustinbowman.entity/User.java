@@ -34,17 +34,52 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
-//    @OneToMany(mappedBy = "users", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-//    @ToString.Exclude
-//    @EqualsAndHashCode.Exclude
-//    private Set<Role> roles  = new HashSet<>();
-//
-//    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
-//    @ToString.Exclude
-//    @EqualsAndHashCode.Exclude
-//    private Set<Game> games = new HashSet<>();
-//
-//    public void addRole(Role role) {
-//        roles.add(role);
-//    }
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Set<Role> roles = new HashSet<>();
+
+    /**
+     * The Games.
+     */
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JoinTable(
+            name = "game_user",
+            joinColumns = { @JoinColumn(name = "user_id")},
+            inverseJoinColumns = { @JoinColumn(name = "game_id")}
+    )
+    Set<Game> games = new HashSet<>();
+
+    /**
+     * Add role.
+     *
+     * @param role the role
+     */
+    public void addRole(Role role) {
+        roles.add(role);
+    }
+
+    /**
+     * Add game.
+     *
+     * @param game the game
+     */
+    public void addGame(Game game) {
+        this.games.add(game);
+        game.getUsers().add(this);
+    }
+
+    /**
+     * Remove game.
+     *
+     * @param game the game
+     */
+    public void removeGame(Game game) {
+        this.games.remove(game);
+        game.getUsers().remove(this);
+    }
+
 }
