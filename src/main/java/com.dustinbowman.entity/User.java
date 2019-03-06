@@ -43,15 +43,37 @@ public class User implements Serializable {
     /**
      * The Games.
      */
-    @ManyToMany(cascade = {CascadeType.ALL})
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JoinTable(
-            name = "game_user",
-            joinColumns = { @JoinColumn(name = "user_id")},
-            inverseJoinColumns = { @JoinColumn(name = "game_id")}
-    )
+    @ManyToMany (fetch = FetchType.EAGER)
+    @JoinTable(name = "game_user",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = { @JoinColumn(name = "game_id")})
     Set<Game> games = new HashSet<>();
+
+    public User() {
+
+    }
+
+    public User(String userName, String password, String email) {
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+    }
+
+    public User(String userName, String password, String email, Set<Role> roles, Set<Game> games) {
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.roles = roles;
+    }
+
+    public User(String userName, String password, String email, Set<Game> games) {
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.games = games;
+    }
 
     /**
      * Add role.
@@ -62,24 +84,12 @@ public class User implements Serializable {
         roles.add(role);
     }
 
-    /**
-     * Add game.
-     *
-     * @param game the game
-     */
-    public void addGame(Game game) {
-        this.games.add(game);
-        game.getUsers().add(this);
+    public void addGame(Game g) {
+        games.add(g);
     }
 
-    /**
-     * Remove game.
-     *
-     * @param game the game
-     */
-    public void removeGame(Game game) {
-        this.games.remove(game);
-        game.getUsers().remove(this);
+    public void removeGame(Game g) {
+        games.remove(g);
     }
 
 }

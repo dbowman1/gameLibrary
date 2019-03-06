@@ -4,7 +4,10 @@ import com.dustinbowman.entity.Game;
 import com.dustinbowman.entity.Role;
 import com.dustinbowman.entity.User;
 import com.dustinbowman.test.util.Database;
-import org.hibernate.Hibernate;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,8 +18,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class UserDaoTest {
 
+    private final Logger logger = LogManager.getLogger(this.getClass());
+    private static SessionFactory sessionFactory;
+    private Session session;
     GenericDao dao;
     List<User> users;
+
 
     @BeforeEach
     void setUp() {
@@ -92,28 +99,40 @@ public class UserDaoTest {
     }
 
     @Test
-    public void testAddGameWithUser() {
-        User user = new User();
-        user.setUserName("Gandalf");
-        user.setEmail("takinghobbitstoisengar");
-        user.setPassword("password Yo");
+    public void testAddGameToUser() {
+        User user = users.get(0);
+        GenericDao gDao = new GenericDao(Game.class);
 
-        Game game = new Game();
-        game.setTitle("Harry Potter");
-        game.setDescription("not a good game");
+        for(int i = 0; i < 5; i ++) {
+            Game game = new Game();
+            game.setGameId(i);
+            user.addGame(game);
+            gDao.insert(game);
+            assertTrue(gDao.getAll().size() > 0);
+        }
 
-        int gameId = 0;
-        GenericDao gameDao = new GenericDao(Game.class);
-        gameId = gameDao.insert(game);
-        Game retrievedGame = (Game) gameDao.getById(gameId);
-        assertEquals(retrievedGame, game);
+        dao.saveOrUpdate(user);
+        assertEquals(6, user.getGames().size());
+    }
 
-        user.getGames().add(game);
-        game.getUsers().add(user);
+    @Test
+    public void testRemoveGameFromUser() {
+        User user = users.get(0);
+        GenericDao gDao = new GenericDao(Game.class);
 
-        user.getGames();
+        int gameId = 1;
+        Game retrievedGame = (Game)gDao.getById(gameId);
 
-
+        logger.debug("The Retrieved game: " + retrievedGame);
+        int userId = user.getId();
+        User retrievedUser = (User) dao.getById(userId);
+        assertEquals(retrievedUser, user);
+        assertEquals(1, retrievedUser.getGames().size());
+        logger.debug("The user game size before remove: " + retrievedUser.getGames().size());
+        int sizeBeforeRemove = retrievedUser.getGames().size();
+        retrievedUser.removeGame(retrievedGame);
+        logger.debug("The user game size after remove: " + retrievedUser.getGames().size());
+        assertEquals(sizeBeforeRemove -1, retrievedUser.getGames().size());
 
     }
 }

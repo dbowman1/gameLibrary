@@ -18,12 +18,12 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String title;
-    private String description;
+    @Column(name = "game_id")
+    private int gameId;
 
-    @ManyToMany(mappedBy = "games")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    @ManyToMany(mappedBy = "games")
     private Set<User> users = new HashSet<>();
 
 }

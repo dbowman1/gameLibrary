@@ -27,14 +27,11 @@ public class GameDaoTest {
         database.runSQL("cleandb.sql");
         dao = new GenericDao(Game.class);
         game = new Game();
-        game.setTitle("Super Awesome");
-        game.setDescription("Yup Description");
 
     }
 
     @Test
     public void testCreate() {
-        // Insert game with title / description and includes the User ID
         int gameId = 0;
         gameId = dao.insert(game);
         Game gameCreated = (Game) dao.getById(gameId);
@@ -60,8 +57,6 @@ public class GameDaoTest {
     public void testUpdate() {
         int createdId = dao.insert(game);
         game.setId(createdId);
-        game.setDescription("Boring");
-        game.setTitle("Much Boring very wow");
         dao.saveOrUpdate(game);
         Game updatedGame = (Game) dao.getById(createdId);
         assertEquals(game,updatedGame);
