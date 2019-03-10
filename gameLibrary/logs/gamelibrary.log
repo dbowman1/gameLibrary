@@ -1,8 +1,0 @@
-[DEBUG] 2019-03-10 18:30:08.717 [main] UserDaoTest - [Role(id=57, role=admin)]
-[DEBUG] 2019-03-10 18:30:09.014 [main] UserDaoTest - The Retrieved game: Game(id=1, gameId=12345)
-[DEBUG] 2019-03-10 18:30:09.019 [main] UserDaoTest - The user game size before remove: 1
-[DEBUG] 2019-03-10 18:30:09.019 [main] UserDaoTest - The user game size after remove: 0
-[DEBUG] 2019-03-10 18:30:53.345 [main] UserDaoTest - [Role(id=58, role=admin)]
-[DEBUG] 2019-03-10 18:30:53.675 [main] UserDaoTest - The Retrieved game: Game(id=1, gameId=12345)
-[DEBUG] 2019-03-10 18:30:53.680 [main] UserDaoTest - The user game size before remove: 1
-[DEBUG] 2019-03-10 18:30:53.680 [main] UserDaoTest - The user game size after remove: 0
