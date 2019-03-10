@@ -59,3 +59,6 @@ src/main/resources/hibernate.cfg.xml
 
 src/main/resources/database.properties
 database.properties
+
+src/main/webapp/META-INF/context.xml
+context.xml

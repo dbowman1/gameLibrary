@@ -1,6 +1,7 @@
 package com.dustinbowman.entity;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -14,6 +15,8 @@ public class Role {
 
     private String role;
 
+    @ToString.Exclude
     @ManyToOne
     private User user;
+
 }

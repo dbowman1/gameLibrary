@@ -22,23 +22,17 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private int id;
 
-    @Column(name = "userName")
     private String userName;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "email")
     private String email;
-
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles = new HashSet<Role>();
 
     /**
      * The Games.
@@ -49,32 +43,7 @@ public class User implements Serializable {
     @JoinTable(name = "game_user",
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = { @JoinColumn(name = "game_id")})
-    Set<Game> games = new HashSet<>();
-
-    public User() {
-
-    }
-
-    public User(String userName, String password, String email) {
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
-    }
-
-    public User(String userName, String password, String email, Set<Role> roles, Set<Game> games) {
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
-        this.roles = roles;
-    }
-
-    public User(String userName, String password, String email, Set<Game> games) {
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
-        this.games = games;
-    }
-
+    Set<Game> games = new HashSet<Game>();
     /**
      * Add role.
      *

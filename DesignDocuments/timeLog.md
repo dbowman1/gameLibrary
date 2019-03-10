@@ -11,3 +11,4 @@
 |2/14/19|4| Added some initial dao/hibernate prep for project, but will do EX4 for practice| 
 |2/20/19|3| Added generic dao, lombok(getters and setters), added a user database and UnitTesting|
 |2/28/19|4| Did some test cases, (may need to figure out the whole many to many), added some templates (head/footer)|
+|3/9/19|5|Week 6/7 spent too much time time on week 7 for the indie project, and realized a view worked in place of a table for the tomcat|

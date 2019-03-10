@@ -40,7 +40,9 @@ public class UserDaoTest {
     }
     @Test
     public void getAllUsersSuccess() {
+        assertTrue(users.size() > 0);
         assertEquals(3, users.size());
+        assertFalse(users.get(0).getUserName().equals(""));
     }
 
     @Test
@@ -80,7 +82,7 @@ public class UserDaoTest {
     public void testInsertWithRole() {
         int insertedUser = 0;
         User user = new User();
-        user.setUserName("testUserName");
+        user.setUserName("gandalfTheWhite");
         user.setPassword("notarealpass");
         user.setEmail("notanemail@mail.com");
 
@@ -96,6 +98,7 @@ public class UserDaoTest {
         assertEquals(user, retrievedUser);
         assertEquals(1, retrievedUser.getRoles().size());
         assertTrue(retrievedUser.getRoles().contains(role));
+        logger.debug(retrievedUser.getRoles());
     }
 
     @Test
