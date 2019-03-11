@@ -25,17 +25,17 @@
 
 ### Week 5
 
-- [ ] Create the template for all jsps using bootstrap or materialize
-- [ ] Weekly journal entry
-- [ ] Add jsp to add a user
+- [x] Create the template for all jsps using bootstrap or materialize
+- [x] Weekly journal entry
+- [x] Add jsp to add a user
 
 ### Week 6
 
 - [ ] Create db on AWS
 - [ ] Deploy to AWS for first time
 - [ ] Weekly journal entry
-- [ ] Create library table
-- [ ] Add the library entity (test, dev and prod dbs)
+- [x] Create library table
+- [x] Add the library entity (test, dev and prod dbs)
 - [ ] Add update and delete functionality in jsp for user
 - [ ] Build the game search jsp
 - [ ] Build the game add/update/delete jsp 
@@ -45,7 +45,7 @@
 ### Week 7
 
 - [ ] Weekly journal entry
-- [ ] Set up authentication locally
+- [x] Set up authentication locally
 - [ ] Set up authentication on AWS
 - [ ] Review and incorporate any feedback from Checkpoint 2.
 

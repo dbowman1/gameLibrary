@@ -7,11 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Login Failed</title>
-</head>
-<body>
-Login failed... please try again.
+<jsp:include page="head.jsp"/>
 
+<body>
+<%--#TODO fancy up error page?--%>
+Login failed... please try again.
+<a href="index.jsp">Home</a>
 </body>
+<jsp:include page="footer.jsp"/>
 </html>

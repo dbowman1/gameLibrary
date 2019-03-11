@@ -7,11 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Test</title>
-</head>
+<jsp:include page="head.jsp"/>
+
 <body>
 <%--#TODO DELETE or edit this jsp LATER only for a test--%>
 <h4>This is a admin only page.</h4>
+<a href="index.jsp">Home</a>
 </body>
+<jsp:include page="footer.jsp"/>
 </html>

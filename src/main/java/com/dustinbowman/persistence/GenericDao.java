@@ -9,11 +9,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.JoinType;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The type Generic dao.
@@ -104,6 +103,22 @@ public class GenericDao<T> {
         transaction.commit();
         session.close();
         return id;
+    }
+
+    /**
+     * Finds entities by one of its properties.
+     * @param propertyName the property name.
+     * @param value the value by which to find.
+     * @return
+     */
+    public List<T> findByPropertyEqual(String propertyName, Object value) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get(propertyName),value));
+
+        return session.createQuery(query).getResultList();
     }
 
     private Session getSession() {

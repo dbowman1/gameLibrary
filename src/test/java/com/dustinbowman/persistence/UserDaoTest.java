@@ -12,7 +12,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -137,5 +139,12 @@ public class UserDaoTest {
         logger.debug("The user game size after remove: " + retrievedUser.getGames().size());
         assertEquals(sizeBeforeRemove -1, retrievedUser.getGames().size());
 
+    }
+
+    @Test
+    public void testUserExist() {
+        users = dao.findByPropertyEqual("userName", "username");
+        assertTrue(users.size() > 0);
+        assertTrue(users.get(0).getEmail().equals("email"));
     }
 }

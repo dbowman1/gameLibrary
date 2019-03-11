@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Login</title>
-</head>
+<jsp:include page="head.jsp"/>
+
 <body>
+<%--#TODO fancy up login auth page.--%>
 <FORM ACTION="j_security_check" METHOD="POST">
     <TABLE>
         <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username">
@@ -19,4 +19,5 @@
     </TABLE>
 </FORM>
 </body>
+<jsp:include page="footer.jsp"/>
 </html>
