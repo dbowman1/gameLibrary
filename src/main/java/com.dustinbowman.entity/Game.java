@@ -23,7 +23,8 @@ public class Game {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @ManyToMany(mappedBy = "games")
+    @ManyToMany (mappedBy = "games",
+            cascade = {CascadeType.MERGE ,CascadeType.PERSIST})
     private Set<User> users = new HashSet<>();
 
 }

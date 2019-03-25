@@ -1,15 +1,14 @@
 package com.dustinbowman.persistence;
 
 import com.dustinbowman.entity.Game;
-import com.dustinbowman.entity.User;
 import com.dustinbowman.test.util.Database;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 
-import java.util.HashMap;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -18,31 +17,35 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class GameDaoTest {
 
+    private final Logger logger = LogManager.getLogger(this.getClass());
     GenericDao dao;
     Game game;
+    List<Game> games;
 
-    @Before
+
+    @BeforeEach
     public void setUp() {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
         dao = new GenericDao(Game.class);
-        game = new Game();
+        games = dao.getAll();
 
     }
 
     @Test
     public void testCreate() {
-        int gameId = 0;
-        gameId = dao.insert(game);
+        Game game = new Game();
+        game.setGameId(245);
+
+        int gameId = dao.insert(game);
         Game gameCreated = (Game) dao.getById(gameId);
         assertEquals(gameCreated, game);
-
     }
 
     @Test
     public void testGet() {
-        int createdId = dao.insert(game);
-        Game actualGame = (Game)dao.getById(createdId);
+        Game game = games.get(0);
+        Game actualGame = (Game)dao.getById(1);
         assertNotNull(actualGame);
         assertEquals(game,actualGame);
     }
@@ -50,29 +53,27 @@ public class GameDaoTest {
     @Test
     public void testGetAll() {
         List<Game> gameList = dao.getAll();
+        logger.debug(gameList);
         assertTrue(gameList.size() > 0);
+        assertEquals(4, games.size());
     }
 
     @Test
     public void testUpdate() {
-        int createdId = dao.insert(game);
-        game.setId(createdId);
+        Game game = games.get(3);
+        int id = game.getId();
+        game.setGameId(99);
         dao.saveOrUpdate(game);
-        Game updatedGame = (Game) dao.getById(createdId);
+        Game updatedGame = (Game)dao.getById(id);
         assertEquals(game,updatedGame);
 
     }
 
     @Test
     public void testDelete() {
-        int createdId = dao.insert(game);
-        game.setId(createdId);
-        dao.delete(game);
-        Game updatedGame = (Game) dao.getById(createdId);
-        assertNull(updatedGame);
-
+        game = games.get(3);
+        dao.delete(dao.getById(4));
+        assertNull(dao.getById(4));
     }
-
-
 
 }

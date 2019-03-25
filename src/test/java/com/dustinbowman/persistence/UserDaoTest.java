@@ -6,23 +6,17 @@ import com.dustinbowman.entity.User;
 import com.dustinbowman.test.util.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserDaoTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
-    private static SessionFactory sessionFactory;
-    private Session session;
     GenericDao dao;
     List<User> users;
 
@@ -40,6 +34,16 @@ public class UserDaoTest {
         dao.delete(dao.getById(1));
         assertNull(dao.getById(1));
     }
+
+    @Test
+    public void getUserById() {
+        User user = users.get(0);
+        User returnedUser = (User)dao.getById(1);
+        assertEquals(user,returnedUser);
+
+
+    }
+
     @Test
     public void getAllUsersSuccess() {
         assertTrue(users.size() > 0);
@@ -51,7 +55,10 @@ public class UserDaoTest {
     public void testDeleteUser() {
         int sizeBeforeDelete = dao.getAll().size();
         User userDeleted = users.get(0);
+        logger.debug("User game size before >" + userDeleted.getGames().size());
         int id = userDeleted.getId();
+        userDeleted.removeAll();
+        logger.debug("User game size after >" + userDeleted.getGames().size());
         dao.delete(userDeleted);
         int sizeAfterDelete = dao.getAll().size();
 
@@ -117,7 +124,7 @@ public class UserDaoTest {
         }
 
         dao.saveOrUpdate(user);
-        assertEquals(6, user.getGames().size());
+        assertEquals(8, user.getGames().size());
     }
 
     @Test
@@ -132,12 +139,27 @@ public class UserDaoTest {
         int userId = user.getId();
         User retrievedUser = (User) dao.getById(userId);
         assertEquals(retrievedUser, user);
-        assertEquals(1, retrievedUser.getGames().size());
+        assertEquals(3, retrievedUser.getGames().size());
         logger.debug("The user game size before remove: " + retrievedUser.getGames().size());
         int sizeBeforeRemove = retrievedUser.getGames().size();
+        logger.debug("The game " + retrievedGame);
         retrievedUser.removeGame(retrievedGame);
+        dao.saveOrUpdate(retrievedUser);
         logger.debug("The user game size after remove: " + retrievedUser.getGames().size());
         assertEquals(sizeBeforeRemove -1, retrievedUser.getGames().size());
+    }
+
+    @Test
+    public void testRemoveAllGamesFromUser() {
+        User user = users.get(0);
+        int userId = user.getId();
+        User returnedUser = (User)dao.getById(userId);
+        assertEquals(user, returnedUser);
+        logger.debug("Before: " + returnedUser.getGames().size());
+        returnedUser.removeAll();
+        dao.saveOrUpdate(returnedUser);
+        assertEquals(0, returnedUser.getGames().size());
+        logger.debug("After: " + returnedUser.getGames().size());
 
     }
 
@@ -148,3 +170,5 @@ public class UserDaoTest {
         assertTrue(users.get(0).getEmail().equals("email"));
     }
 }
+
+//Delete user completely what happens to roles / games tests

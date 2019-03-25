@@ -9,6 +9,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,10 +40,10 @@ public class User implements Serializable {
      */
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @ManyToMany (fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "game_user",
             joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = { @JoinColumn(name = "game_id")})
+            inverseJoinColumns = @JoinColumn(name = "game_id"))
     Set<Game> games = new HashSet<Game>();
     /**
      * Add role.
@@ -59,6 +60,12 @@ public class User implements Serializable {
 
     public void removeGame(Game g) {
         games.remove(g);
+    }
+
+    public void removeAll() {
+        for(Game game: new ArrayList<>(games)) {
+            removeGame(game);
+        }
     }
 
 }
