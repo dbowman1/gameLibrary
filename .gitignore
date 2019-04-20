@@ -63,3 +63,6 @@ database.properties
 
 src/main/webapp/META-INF/context.xml
 context.xml
+
+/config.properties
+config.properties

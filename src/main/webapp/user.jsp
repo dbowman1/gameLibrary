@@ -10,9 +10,12 @@
 <jsp:include page="head.jsp"/>
 
 <body>
+<jsp:include page="navbar.jsp"/>
 <%--#TODO DELETE or edit this jsp LATER only for a test--%>
 <h4>This is a user/admin only page</h4>
+
 <a href="index.jsp">Home</a>
-</body>
+
 <jsp:include page="footer.jsp"/>
+</body>
 </html>

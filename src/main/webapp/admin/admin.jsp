@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dbow_
@@ -7,12 +8,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<jsp:include page="head.jsp"/>
+<jsp:include page="../head.jsp"/>
+
 
 <body>
+<jsp:include page="../navbar.jsp"/>
 <%--#TODO DELETE or edit this jsp LATER only for a test--%>
 <h4>This is a admin only page.</h4>
-<a href="index.jsp">Home</a>
+<br/>
+<a href="viewUsers">All Users</a>
 </body>
-<jsp:include page="footer.jsp"/>
+<jsp:include page="../footer.jsp"/>
 </html>

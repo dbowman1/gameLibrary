@@ -10,6 +10,7 @@
 <jsp:include page="head.jsp"/>
 
 <body>
+<jsp:include page="navbar.jsp"/>
 <%--#TODO Fancy up sign up page--%>
 <div class = "container">
     <form id="signUpForm" role="form" data-toggle="validator" class="form-horizontal"
@@ -66,6 +67,6 @@
         <button type="reset" class="btn btn-default">Clear</button>
     </form>
 </div>
-</body>
 <jsp:include page="footer.jsp"/>
+</body>
 </html>

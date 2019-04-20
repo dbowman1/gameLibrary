@@ -10,9 +10,10 @@
 <jsp:include page="head.jsp"/>
 
 <body>
+<jsp:include page="navbar.jsp"/>
 <%--#TODO fancy up error page?--%>
 Login failed... please try again.
-<a href="index.jsp">Home</a>
+<a href="/gameLibrary/index.jsp">Home</a>
 </body>
 <jsp:include page="footer.jsp"/>
 </html>

@@ -8,7 +8,7 @@
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/login.jsp</form-login-page>
+      <form-login-page>/signIn.jsp</form-login-page>
       <form-error-page>/loginError.jsp</form-error-page>
     </form-login-config>
   </login-config>
@@ -17,7 +17,7 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>admin</web-resource-name>
-      <url-pattern>/admin.jsp</url-pattern>
+      <url-pattern>/admin/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
@@ -28,6 +28,8 @@
     <web-resource-collection>
       <web-resource-name>user</web-resource-name>
       <url-pattern>/user.jsp</url-pattern>
+      <url-pattern>/signInConfirmation.jsp</url-pattern>
+      <url-pattern>/logout.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
@@ -55,5 +57,6 @@
     <error-code>500</error-code>
     <location>/loginError.jsp</location>
   </error-page>
+
 
 </web-app>

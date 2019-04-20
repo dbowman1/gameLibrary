@@ -2,35 +2,29 @@
 <%--
   Created by IntelliJ IDEA.
   User: dbow_
-  Date: 3/10/2019
-  Time: 7:43 PM
+  Date: 3/26/2019
+  Time: 11:03 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <jsp:include page="head.jsp"/>
-
 <body>
 <jsp:include page="navbar.jsp"/>
-<%--#TODO fancy up success page--%>
 <c:choose>
-    <c:when test="${errorMessage == null}">
+    <c:when test="${errorMsg == null}">
         <div class="alert alert-success" role="alert">
-            <strong>New User Registration -- Success</strong>
-        </div><br/><br/>
-        <a href="index.jsp">Home</a>
+            You are signed in.<br/>
+            <a href="index.jsp"><button type="button" class="btn btn-default">Home</button></a>
+        </div>
     </c:when>
     <c:otherwise>
         <div class="alert alert-danger" role="alert">
-            <strong>New User Registration -- Failed</strong><br />
-            ${errorMessage}<br /><br />
-            <a href="userSignUp.jsp"><button type="button" class="btn btn-primary">
-                Retry</button></a>
+            Login Failed -- ${errorMsg}<br/>
+            <a href="signIn.jsp"><button type="button" class="btn btn-primary">Sign in</button></a>
+            <a href="index.jsp"><button type="button" class="btn btn-default">Home</button></a>
         </div>
     </c:otherwise>
-
 </c:choose>
-
-<jsp:include page="footer.jsp"/>
 </body>
 </html>

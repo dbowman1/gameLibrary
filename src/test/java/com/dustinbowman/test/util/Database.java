@@ -38,7 +38,7 @@ public class Database {
     private void loadProperties() {
         properties = new Properties();
         try {
-            properties.load (this.getClass().getResourceAsStream("/database.properties"));
+            properties.load (this.getClass().getResourceAsStream("/hibernate.properties"));
         } catch (IOException ioe) {
             logger.error("Database.loadProperties()...Cannot load the properties file", ioe);
         } catch (Exception e) {
