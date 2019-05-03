@@ -14,7 +14,7 @@
 <div class="alert alert-danger" role="alert">
     Login failed... please try again.
     <br/><br/>
-    <a href="/gameLibrary/">Home</a>
+    <a href="/gameLibrary/"><button type="submit" class="btn btn-default">Home</button></a>
 </div>
 </body>
 <jsp:include page="footer.jsp"/>
