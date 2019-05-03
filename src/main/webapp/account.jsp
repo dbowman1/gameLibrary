@@ -53,14 +53,15 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-default col-sm-offset-2"
+        <button type="submit" class="btn btn-default col-md-offset-2"
                 data-disable="true">Update Account
         </button>
         <button type="reset" class="btn btn-default">Clear</button>
         <br/><br/>
-        <a href="removeAllGames"><button type="button" class="btn btn-danger">Remove All Games</button></a>
+        <div class="col-md-offset-2">
+            <a href="removeAllGames"><button type="button" class="btn btn-danger">Remove All Games</button></a>
+        </div>
     </form>
-    <a href=""></a>
 </div>
 
 <c:if test="${msg != null || errorMessage != null}">

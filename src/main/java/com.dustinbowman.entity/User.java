@@ -44,7 +44,7 @@ public class User implements Serializable {
     @JoinTable(name = "game_user",
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = @JoinColumn(name = "game_id"))
-    Set<Game> games = new HashSet<Game>();
+    private Set<Game> games = new HashSet<Game>();
 
     /**
      * Add role.

@@ -33,6 +33,7 @@ public class SearchGame extends HttpServlet {
 
         List<GameResults> gameResults;
         gameResults = cs.getApiGame(gameSearch);
+        logger.info("Game searched results >>" + gameResults);
         req.setAttribute("games", gameResults);
         req.setAttribute("searchedGame", userGameSearch);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/gameSearch.jsp");

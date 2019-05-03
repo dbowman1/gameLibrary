@@ -53,8 +53,7 @@ public class PaginateList<T> {
         }
 
         currentPage = pageNumber;
-        List<T> page = listOfPages.get(--pageNumber);
-        return page;
+        return listOfPages.get(--pageNumber);
     }
 
     /**
@@ -76,8 +75,7 @@ public class PaginateList<T> {
      * @return the list
      */
     public List<T> nextPage() {
-        List<T> page = getPage(++currentPage);
-        return page;
+        return getPage(++currentPage);
     }
 
     /**
@@ -86,8 +84,7 @@ public class PaginateList<T> {
      * @return the list
      */
     public List<T> previousPage() {
-        List<T> page = getPage(--currentPage);
-        return page;
+        return getPage(--currentPage);
     }
 
     /**

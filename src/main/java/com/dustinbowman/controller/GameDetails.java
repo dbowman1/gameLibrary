@@ -16,12 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static java.lang.Integer.parseInt;
 
@@ -45,7 +40,7 @@ public class GameDetails extends HttpServlet {
 
         List<GameResults> gameList;
         gameList = cs.getApiGame(params);
-
+        logger.info("The results => " + gameList);
 
         if(req.getRemoteUser() != null ) {
             GenericDao dao = new GenericDao(User.class);

@@ -32,6 +32,7 @@ public class NewReleases extends HttpServlet {
                 + "release_dates.date > " + currentTime + " & release_dates.platform = (6); limit 10; sort name asc;";
         List<GameResults> gameList;
         gameList = cs.getApiGame(params);
+        logger.info("New Released gamelist > " + gameList);
         req.setAttribute("games", gameList);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req,resp);

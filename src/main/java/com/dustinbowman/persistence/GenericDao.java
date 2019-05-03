@@ -1,7 +1,5 @@
 package com.dustinbowman.persistence;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -16,7 +14,6 @@ import java.util.List;
 public class GenericDao<T> {
 
     private Class<T> type;
-    private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
      * Instantiates a new Generic dao.

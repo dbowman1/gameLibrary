@@ -5,7 +5,7 @@ import com.dustinbowman.entity.User;
 import com.dustinbowman.persistence.GenericDao;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
@@ -23,8 +23,7 @@ public class DBCaller {
      */
     public int convertIdToInt(HttpServletRequest req) {
         String stringId = req.getParameter("gameId");
-        int id = parseInt(stringId);
-        return id;
+        return parseInt(stringId);
     }
 
     /**
@@ -34,8 +33,7 @@ public class DBCaller {
      * @return the game
      */
     public String getGame(HttpServletRequest req) {
-        String gameName = req.getParameter("gameName");
-        return gameName;
+        return req.getParameter("gameName");
     }
 
     /**
@@ -45,8 +43,7 @@ public class DBCaller {
      * @return the string
      */
     public String userFromRemote(HttpServletRequest req) {
-        String name = req.getRemoteUser();
-        return name;
+        return req.getRemoteUser();
     }
     /**
      * User from user name list.
@@ -57,8 +54,7 @@ public class DBCaller {
     public List userFromUserName(HttpServletRequest req) {
         String name = req.getRemoteUser();
         GenericDao uDao = new GenericDao(User.class);
-        List<User> users = uDao.findByPropertyEqual("userName", name);
-        return users;
+        return uDao.findByPropertyEqual("userName", name);
     }
     /**
      * Game from game id list.
@@ -70,8 +66,7 @@ public class DBCaller {
         GenericDao gDao = new GenericDao(Game.class);
         String stringId = req.getParameter("gameId");
         int id = parseInt(stringId);
-        List<Game> games = gDao.findByPropertyEqual("gameId", id);
-        return  games;
+        return gDao.findByPropertyEqual("gameId", id);
     }
 
 }
