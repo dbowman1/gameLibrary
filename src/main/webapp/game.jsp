@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <iframe width="420" height="270" src="https://www.youtube.com/embed/${games[0].videos[0].videoId}?controls=0"></iframe>
+                    <iframe width="100%" height="270" src="https://www.youtube.com/embed/${games[0].videos[0].videoId}?controls=0"></iframe>
                 </div>
 
 
