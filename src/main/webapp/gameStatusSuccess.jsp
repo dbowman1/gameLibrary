@@ -16,19 +16,20 @@
 <c:choose>
     <c:when test="${errorMessage == null}">
         <div class="alert alert-success" role="alert">
-            <strong>New User Registration -- Success</strong>
+            <strong>${msg}</strong>
             <br/><br/>
-            <a href="/gameLibrary/"><button type="button" class="btn btn-primary">
-                Home</button></a>
-        </div>
+            <a href="/gameLibrary/game?id=${gameID}"><button type="button" class="btn btn-primary">
+                Go Back</button></a>
+        </div><br/><br/>
+
     </c:when>
     <c:otherwise>
         <div class="alert alert-danger" role="alert">
-            <strong>New User Registration -- Failed</strong><br />
-            ${errorMessage}<br /><br />
-            <a href="userSignUp.jsp"><button type="button" class="btn btn-primary">
-                Retry</button></a>
-        </div>
+            <strong>${errorMessage}</strong><br />
+            <br /><br/>
+            <a href="/gameLibrary/game?id=${gameID}"><button type="button" class="btn btn-primary">
+                Go Back</button></a>
+        </div><br/><br/>
     </c:otherwise>
 
 </c:choose>

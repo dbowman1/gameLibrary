@@ -5,14 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import javax.persistence.criteria.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * The type Generic dao.
@@ -96,7 +90,7 @@ public class GenericDao<T> {
      * @return the int
      */
     public int insert(T entity) {
-        int id = 0;
+        int id;
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
         id = (int)session.save(entity);
@@ -118,7 +112,9 @@ public class GenericDao<T> {
         Root<T> root = query.from(type);
         query.select(root).where(builder.equal(root.get(propertyName),value));
 
-        return session.createQuery(query).getResultList();
+        List<T> list = session.createQuery(query).getResultList();
+        session.close();
+        return list;
     }
 
     private Session getSession() {

@@ -2,3 +2,30 @@
     text-align: center;
 }
 
+.gameCover {
+    margin-bottom: 15px;
+}
+
+.addButton, .removeButton {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.screenShotsCarousel, #screenShots, .gameScreenShots, img.img-responsive.center-block.gameScreenShots {
+    height: 450px;
+}
+
+#screenShots {
+    margin-top: 45px;
+}
+
+.pageFooter {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}

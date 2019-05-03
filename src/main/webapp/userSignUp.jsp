@@ -12,10 +12,21 @@
 <body>
 <jsp:include page="navbar.jsp"/>
 <%--#TODO Fancy up sign up page--%>
-<div class = "container">
+<h2 class="text-center">Sign Up</h2>
+<div class = "container col-md-offset-3 col-md-9">
     <form id="signUpForm" role="form" data-toggle="validator" class="form-horizontal"
           action="userSignUp"
           method="post">
+
+        <div class="form-group">
+            <label  class="control-label col-sm-2" for="userName">Username</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="userName"
+                       name="userName"
+                       data-error="Please enter your userName." required>
+            </div>
+            <div class="help-block with-errors"></div>
+        </div>
 
         <div class="form-group">
             <label  class="control-label col-sm-2" for="emailAddress">Email
@@ -24,15 +35,6 @@
                 <input type="email" class="form-control" id="emailAddress"
                        name="emailAddress"
                        data-error="Please enter your email address." required>
-            </div>
-            <div class="help-block with-errors"></div>
-        </div>
-        <div class="form-group">
-            <label  class="control-label col-sm-2" for="userName">Username</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" id="userName"
-                       name="userName"
-                       data-error="Please enter your userName." required>
             </div>
             <div class="help-block with-errors"></div>
         </div>

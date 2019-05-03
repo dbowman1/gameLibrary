@@ -15,16 +15,18 @@
     <c:when test="${errorMsg == null}">
         <div class="alert alert-success" role="alert">
             You are signed in.<br/>
-            <a href="index.jsp"><button type="button" class="btn btn-default">Home</button></a>
+            <a href="/gameLibrary/"><button type="button" class="btn btn-default">Home</button></a>
         </div>
     </c:when>
     <c:otherwise>
         <div class="alert alert-danger" role="alert">
             Login Failed -- ${errorMsg}<br/>
             <a href="signIn.jsp"><button type="button" class="btn btn-primary">Sign in</button></a>
-            <a href="index.jsp"><button type="button" class="btn btn-default">Home</button></a>
+            <a href="/gameLibrary/"><button type="button" class="btn btn-default">Home</button></a>
         </div>
     </c:otherwise>
 </c:choose>
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

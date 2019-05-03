@@ -9,8 +9,14 @@ public class ScreenshotsItem{
 	@JsonProperty("game")
 	private int game;
 
+	@JsonProperty("alpha_channel")
+	private boolean alphaChannel;
+
 	@JsonProperty("width")
 	private int width;
+
+	@JsonProperty("animated")
+	private boolean animated;
 
 	@JsonProperty("id")
 	private int id;
@@ -32,12 +38,28 @@ public class ScreenshotsItem{
 		return game;
 	}
 
+	public void setAlphaChannel(boolean alphaChannel){
+		this.alphaChannel = alphaChannel;
+	}
+
+	public boolean isAlphaChannel(){
+		return alphaChannel;
+	}
+
 	public void setWidth(int width){
 		this.width = width;
 	}
 
 	public int getWidth(){
 		return width;
+	}
+
+	public void setAnimated(boolean animated){
+		this.animated = animated;
+	}
+
+	public boolean isAnimated(){
+		return animated;
 	}
 
 	public void setId(int id){
@@ -77,7 +99,9 @@ public class ScreenshotsItem{
 		return 
 			"ScreenshotsItem{" + 
 			"game = '" + game + '\'' + 
+			",alpha_channel = '" + alphaChannel + '\'' + 
 			",width = '" + width + '\'' + 
+			",animated = '" + animated + '\'' + 
 			",id = '" + id + '\'' + 
 			",image_id = '" + imageId + '\'' + 
 			",url = '" + url + '\'' + 

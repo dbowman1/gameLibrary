@@ -1,7 +1,6 @@
 package com.dustinbowman.controller;
 
 import com.dustinbowman.persistence.ClientService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.igdb.api.GameResults;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet (name="SearchGame", urlPatterns = {"/search"})

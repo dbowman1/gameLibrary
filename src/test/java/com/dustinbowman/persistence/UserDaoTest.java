@@ -89,7 +89,7 @@ public class UserDaoTest {
 
     @Test
     public void testInsertWithRole() {
-        int insertedUser = 0;
+        int insertedUser;
         User user = new User();
         user.setUserName("gandalfTheWhite");
         user.setPassword("notarealpass");
@@ -125,6 +125,42 @@ public class UserDaoTest {
 
         dao.saveOrUpdate(user);
         assertEquals(8, user.getGames().size());
+    }
+
+    @Test
+    public void testMultipleUserSameGame() {
+        User userOne = users.get(0);
+        User userTwo = users.get(1);
+        GenericDao gDao = new GenericDao(Game.class);
+
+        Game game = new Game();
+        game.setGameId(42);
+
+        userOne.addGame(game);
+        userTwo.addGame(game);
+        gDao.insert(game);
+
+        dao.saveOrUpdate(userOne);
+        dao.saveOrUpdate(userTwo);
+
+        assertEquals(4, userOne.getGames().size());
+        assertEquals(2 , userTwo.getGames().size());
+    }
+
+    @Test
+    public void testGameAlreadyInDBToUser() {
+        User user = users.get(2);
+        assertEquals(0 , user.getGames().size());
+
+        GenericDao gDao = new GenericDao(Game.class);
+        List<Game> games = gDao.getAll();
+        Game game = (Game)gDao.getById(1);
+        user.addGame(game);
+        dao.saveOrUpdate(user);
+
+        assertTrue(games.contains(game));
+
+        assertEquals(1, user.getGames().size());
     }
 
     @Test
@@ -170,5 +206,3 @@ public class UserDaoTest {
         assertTrue(users.get(0).getEmail().equals("email"));
     }
 }
-
-//Delete user completely what happens to roles / games tests

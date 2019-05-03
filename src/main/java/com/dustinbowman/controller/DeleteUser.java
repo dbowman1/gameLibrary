@@ -2,8 +2,7 @@ package com.dustinbowman.controller;
 
 import com.dustinbowman.entity.User;
 import com.dustinbowman.persistence.GenericDao;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.dustinbowman.utilities.DBCaller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,19 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ViewUsers", urlPatterns = {"/viewUsers"})
+import static java.lang.Integer.parseInt;
 
-public class ViewUsers extends HttpServlet {
-    private final Logger logger = LogManager.getLogger(this.getClass());
+@WebServlet (name = "DeleteUser", urlPatterns = {"/deleteUser"})
+public class DeleteUser extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao<User> dao = new GenericDao(User.class);
-        List<User> users = dao.getAll();
-        req.setAttribute("users", users);
-        logger.debug("Sending users =>" + users);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewUsers.jsp");
+        GenericDao dao = new GenericDao(User.class);
+        String strId = req.getParameter("id");
+        int userId = parseInt(strId);
+        User user = (User)dao.getById(userId);
+        dao.delete(user);
+
+        req.setAttribute("msg", user.getUserName() + " deleted...");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewUsers");
         dispatcher.forward(req,resp);
     }
 }

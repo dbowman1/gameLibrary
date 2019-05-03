@@ -17,7 +17,8 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>admin</web-resource-name>
-      <url-pattern>/admin/*</url-pattern>
+      <url-pattern>/admin.jsp</url-pattern>
+      <url-pattern>/viewUsers.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
@@ -27,10 +28,16 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>user</web-resource-name>
-      <url-pattern>/user.jsp</url-pattern>
-      <url-pattern>/signInConfirmation.jsp</url-pattern>
-      <url-pattern>/logout.jsp</url-pattern>
+          <url-pattern>/user.jsp</url-pattern>
+          <url-pattern>/signInConfirmation.jsp</url-pattern>
+          <url-pattern>/logout.jsp</url-pattern>
+          <url-pattern>/addGameSuccess.jsp</url-pattern>
+          <url-pattern>/addGame</url-pattern>
+          <url-pattern>/myLibrary</url-pattern>
+          <url-pattern>/logout</url-pattern>
+          <url-pattern>/account.jsp</url-pattern>
     </web-resource-collection>
+
     <auth-constraint>
       <role-name>admin</role-name>
       <role-name>user</role-name>
@@ -44,6 +51,15 @@
     <role-name>user</role-name>
   </security-role>
 
+
+  <servlet-mapping>
+    <servlet-name>NewReleases</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>/newReleases</welcome-file>
+  </welcome-file-list>
 
   <error-page>
     <error-code>404</error-code>

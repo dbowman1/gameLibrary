@@ -13,20 +13,14 @@ public class GameResults{
 	@JsonProperty("keywords")
 	private List<Integer> keywords;
 
-	@JsonProperty("rating")
-	private double rating;
-
 	@JsonProperty("similar_games")
-	private List<SimilarGamesItem> similarGames;
+	private List<Integer> similarGames;
 
 	@JsonProperty("created_at")
 	private int createdAt;
 
 	@JsonProperty("videos")
 	private List<VideosItem> videos;
-
-	@JsonProperty("alternative_names")
-	private List<Integer> alternativeNames;
 
 	@JsonProperty("player_perspectives")
 	private List<Integer> playerPerspectives;
@@ -35,7 +29,7 @@ public class GameResults{
 	private List<ScreenshotsItem> screenshots;
 
 	@JsonProperty("platforms")
-	private List<PlatformsItem> platforms;
+	private List<Integer> platforms;
 
 	@JsonProperty("cover")
 	private Cover cover;
@@ -64,9 +58,6 @@ public class GameResults{
 	@JsonProperty("release_dates")
 	private List<ReleaseDatesItem> releaseDates;
 
-	@JsonProperty("total_rating")
-	private double totalRating;
-
 	@JsonProperty("id")
 	private int id;
 
@@ -94,20 +85,14 @@ public class GameResults{
 	@JsonProperty("url")
 	private String url;
 
-	@JsonProperty("rating_count")
-	private int ratingCount;
-
 	@JsonProperty("tags")
 	private List<Integer> tags;
 
-	@JsonProperty("bundles")
-	private List<Integer> bundles;
+	@JsonProperty("artworks")
+	private List<ArtworksItem> artworks;
 
 	@JsonProperty("name")
 	private String name;
-
-	@JsonProperty("total_rating_count")
-	private int totalRatingCount;
 
 	@JsonProperty("websites")
 	private List<WebsitesItem> websites;
@@ -134,19 +119,11 @@ public class GameResults{
 		return keywords;
 	}
 
-	public void setRating(double rating){
-		this.rating = rating;
-	}
-
-	public double getRating(){
-		return rating;
-	}
-
-	public void setSimilarGames(List<SimilarGamesItem> similarGames){
+	public void setSimilarGames(List<Integer> similarGames){
 		this.similarGames = similarGames;
 	}
 
-	public List<SimilarGamesItem> getSimilarGames(){
+	public List<Integer> getSimilarGames(){
 		return similarGames;
 	}
 
@@ -166,14 +143,6 @@ public class GameResults{
 		return videos;
 	}
 
-	public void setAlternativeNames(List<Integer> alternativeNames){
-		this.alternativeNames = alternativeNames;
-	}
-
-	public List<Integer> getAlternativeNames(){
-		return alternativeNames;
-	}
-
 	public void setPlayerPerspectives(List<Integer> playerPerspectives){
 		this.playerPerspectives = playerPerspectives;
 	}
@@ -190,11 +159,11 @@ public class GameResults{
 		return screenshots;
 	}
 
-	public void setPlatforms(List<PlatformsItem> platforms){
+	public void setPlatforms(List<Integer> platforms){
 		this.platforms = platforms;
 	}
 
-	public List<PlatformsItem> getPlatforms(){
+	public List<Integer> getPlatforms(){
 		return platforms;
 	}
 
@@ -270,14 +239,6 @@ public class GameResults{
 		return releaseDates;
 	}
 
-	public void setTotalRating(double totalRating){
-		this.totalRating = totalRating;
-	}
-
-	public double getTotalRating(){
-		return totalRating;
-	}
-
 	public void setId(int id){
 		this.id = id;
 	}
@@ -350,14 +311,6 @@ public class GameResults{
 		return url;
 	}
 
-	public void setRatingCount(int ratingCount){
-		this.ratingCount = ratingCount;
-	}
-
-	public int getRatingCount(){
-		return ratingCount;
-	}
-
 	public void setTags(List<Integer> tags){
 		this.tags = tags;
 	}
@@ -366,12 +319,12 @@ public class GameResults{
 		return tags;
 	}
 
-	public void setBundles(List<Integer> bundles){
-		this.bundles = bundles;
+	public void setArtworks(List<ArtworksItem> artworks){
+		this.artworks = artworks;
 	}
 
-	public List<Integer> getBundles(){
-		return bundles;
+	public List<ArtworksItem> getArtworks(){
+		return artworks;
 	}
 
 	public void setName(String name){
@@ -380,14 +333,6 @@ public class GameResults{
 
 	public String getName(){
 		return name;
-	}
-
-	public void setTotalRatingCount(int totalRatingCount){
-		this.totalRatingCount = totalRatingCount;
-	}
-
-	public int getTotalRatingCount(){
-		return totalRatingCount;
 	}
 
 	public void setWebsites(List<WebsitesItem> websites){
@@ -420,11 +365,9 @@ public class GameResults{
 			"GameResults{" + 
 			"franchise = '" + franchise + '\'' + 
 			",keywords = '" + keywords + '\'' + 
-			",rating = '" + rating + '\'' + 
 			",similar_games = '" + similarGames + '\'' + 
 			",created_at = '" + createdAt + '\'' + 
 			",videos = '" + videos + '\'' + 
-			",alternative_names = '" + alternativeNames + '\'' + 
 			",player_perspectives = '" + playerPerspectives + '\'' + 
 			",screenshots = '" + screenshots + '\'' + 
 			",platforms = '" + platforms + '\'' + 
@@ -437,7 +380,6 @@ public class GameResults{
 			",genres = '" + genres + '\'' + 
 			",popularity = '" + popularity + '\'' + 
 			",release_dates = '" + releaseDates + '\'' + 
-			",total_rating = '" + totalRating + '\'' + 
 			",id = '" + id + '\'' + 
 			",slug = '" + slug + '\'' + 
 			",hypes = '" + hypes + '\'' + 
@@ -447,11 +389,9 @@ public class GameResults{
 			",external_games = '" + externalGames + '\'' + 
 			",collection = '" + collection + '\'' + 
 			",url = '" + url + '\'' + 
-			",rating_count = '" + ratingCount + '\'' + 
 			",tags = '" + tags + '\'' + 
-			",bundles = '" + bundles + '\'' + 
+			",artworks = '" + artworks + '\'' + 
 			",name = '" + name + '\'' + 
-			",total_rating_count = '" + totalRatingCount + '\'' + 
 			",websites = '" + websites + '\'' + 
 			",category = '" + category + '\'' + 
 			",involved_companies = '" + involvedCompanies + '\'' + 

@@ -11,17 +11,18 @@
 <jsp:include page="head.jsp"/>
 <body>
 <jsp:include page="navbar.jsp"/>
-<h2>Search Results of "${searchedGame}"</h2>
+<h2 class="text-center">Search Results of "${searchedGame}"</h2>
 
 
 <c:forEach var="game" items="${games}">
     <div class="panel panel-default col-md-6">
         <h2 class="centerTxt" style="text-align:center;">${game.name}</h2>
-        <div class="panel-heading centerTxt" style="text-align:center;"><img src="${game.cover.url}"/></div>
-        <div class="panel-footer centerTxt" style="text-align:center;"><button type="button" name="button">View Game</button></div>
+        <div class="panel-heading centerTxt" style="text-align:center;">
+            <a href="game?id=${game.id}"><img src="${empty game.cover.url ? 'https://via.placeholder.com/90': game.cover.url}" alt="${game.name} image"/></a>
+        </div>
     </div>
 </c:forEach>
 
-
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

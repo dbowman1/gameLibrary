@@ -1,6 +1,7 @@
 package com.dustinbowman.persistence;
 
 
+import com.dustinbowman.utilities.PropertiesLoader;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.igdb.api.GameResults;
 import org.apache.logging.log4j.LogManager;
@@ -9,45 +10,28 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class TestGameApi {
+public class TestGameApi implements PropertiesLoader {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-    private Properties properties;
-    private String apikey;
-    private String gameUrl;
-    private String newReleaseUrl;
     private String allHeaders;
-    private ObjectMapper mapper;
     private ClientService cs;
 
-    private void loadProperties() {
-        properties = new Properties();
-        try {
-            properties.load (this.getClass().getResourceAsStream("/config.properties"));
-        } catch (IOException ioe) {
-            logger.error("Cannot load the properties file", ioe);
-        } catch (Exception e) {
-            logger.error("exception", e);
-        }
-
-    }
 
     @BeforeEach
     void setUp() {
-        loadProperties();
-        apikey = properties.getProperty("apikey");
-        gameUrl = properties.getProperty("gameUrl");
-        newReleaseUrl = properties.getProperty("newReleaseUrl");
+        Properties properties = loadProperties("/config.properties");
+        String apikey = properties.getProperty("apikey");
+        String gameUrl = properties.getProperty("gameUrl");
+        String newReleaseUrl = properties.getProperty("newReleaseUrl");
         allHeaders = properties.getProperty("allHeaders");
         cs = new ClientService();
-        mapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
 
     }
 
@@ -60,7 +44,6 @@ public class TestGameApi {
 
         String name = gameResults.get(0).getName();
         assertEquals("The Legend of Zelda: Ocarina of Time", name);
-
 
     }
 

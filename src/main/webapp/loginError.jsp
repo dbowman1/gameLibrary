@@ -12,8 +12,11 @@
 <body>
 <jsp:include page="navbar.jsp"/>
 <%--#TODO fancy up error page?--%>
-Login failed... please try again.
-<a href="/gameLibrary/index.jsp">Home</a>
+<div class="alert alert-danger" role="alert">
+    Login failed... please try again.
+    <br/><br/>
+    <a href="/gameLibrary/">Home</a>
+</div>
 </body>
 <jsp:include page="footer.jsp"/>
 </html>

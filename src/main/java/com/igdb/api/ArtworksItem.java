@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class Cover{
+public class ArtworksItem{
 
 	@JsonProperty("game")
 	private int game;
@@ -97,7 +97,7 @@ public class Cover{
 	@Override
  	public String toString(){
 		return 
-			"Cover{" + 
+			"ArtworksItem{" + 
 			"game = '" + game + '\'' + 
 			",alpha_channel = '" + alphaChannel + '\'' + 
 			",width = '" + width + '\'' + 

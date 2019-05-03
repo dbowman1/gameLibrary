@@ -7,8 +7,26 @@ import javax.annotation.Generated;
 @Generated("com.robohorse.robopojogenerator")
 public class PlatformsItem{
 
+	@JsonProperty("generation")
+	private int generation;
+
+	@JsonProperty("summary")
+	private String summary;
+
 	@JsonProperty("product_family")
 	private int productFamily;
+
+	@JsonProperty("alternative_name")
+	private String alternativeName;
+
+	@JsonProperty("created_at")
+	private int createdAt;
+
+	@JsonProperty("abbreviation")
+	private String abbreviation;
+
+	@JsonProperty("url")
+	private String url;
 
 	@JsonProperty("updated_at")
 	private int updatedAt;
@@ -19,17 +37,11 @@ public class PlatformsItem{
 	@JsonProperty("name")
 	private String name;
 
-	@JsonProperty("created_at")
-	private int createdAt;
-
-	@JsonProperty("platform_logo")
-	private int platformLogo;
+	@JsonProperty("websites")
+	private List<Integer> websites;
 
 	@JsonProperty("id")
 	private int id;
-
-	@JsonProperty("abbreviation")
-	private String abbreviation;
 
 	@JsonProperty("category")
 	private int category;
@@ -37,17 +49,24 @@ public class PlatformsItem{
 	@JsonProperty("slug")
 	private String slug;
 
-	@JsonProperty("url")
-	private String url;
+	@JsonProperty("platform_logo")
+	private int platformLogo;
 
-	@JsonProperty("generation")
-	private int generation;
+	public void setGeneration(int generation){
+		this.generation = generation;
+	}
 
-	@JsonProperty("websites")
-	private List<Integer> websites;
+	public int getGeneration(){
+		return generation;
+	}
 
-	@JsonProperty("alternative_name")
-	private String alternativeName;
+	public void setSummary(String summary){
+		this.summary = summary;
+	}
+
+	public String getSummary(){
+		return summary;
+	}
 
 	public void setProductFamily(int productFamily){
 		this.productFamily = productFamily;
@@ -55,6 +74,38 @@ public class PlatformsItem{
 
 	public int getProductFamily(){
 		return productFamily;
+	}
+
+	public void setAlternativeName(String alternativeName){
+		this.alternativeName = alternativeName;
+	}
+
+	public String getAlternativeName(){
+		return alternativeName;
+	}
+
+	public void setCreatedAt(int createdAt){
+		this.createdAt = createdAt;
+	}
+
+	public int getCreatedAt(){
+		return createdAt;
+	}
+
+	public void setAbbreviation(String abbreviation){
+		this.abbreviation = abbreviation;
+	}
+
+	public String getAbbreviation(){
+		return abbreviation;
+	}
+
+	public void setUrl(String url){
+		this.url = url;
+	}
+
+	public String getUrl(){
+		return url;
 	}
 
 	public void setUpdatedAt(int updatedAt){
@@ -81,20 +132,12 @@ public class PlatformsItem{
 		return name;
 	}
 
-	public void setCreatedAt(int createdAt){
-		this.createdAt = createdAt;
+	public void setWebsites(List<Integer> websites){
+		this.websites = websites;
 	}
 
-	public int getCreatedAt(){
-		return createdAt;
-	}
-
-	public void setPlatformLogo(int platformLogo){
-		this.platformLogo = platformLogo;
-	}
-
-	public int getPlatformLogo(){
-		return platformLogo;
+	public List<Integer> getWebsites(){
+		return websites;
 	}
 
 	public void setId(int id){
@@ -103,14 +146,6 @@ public class PlatformsItem{
 
 	public int getId(){
 		return id;
-	}
-
-	public void setAbbreviation(String abbreviation){
-		this.abbreviation = abbreviation;
-	}
-
-	public String getAbbreviation(){
-		return abbreviation;
 	}
 
 	public void setCategory(int category){
@@ -129,56 +164,33 @@ public class PlatformsItem{
 		return slug;
 	}
 
-	public void setUrl(String url){
-		this.url = url;
+	public void setPlatformLogo(int platformLogo){
+		this.platformLogo = platformLogo;
 	}
 
-	public String getUrl(){
-		return url;
-	}
-
-	public void setGeneration(int generation){
-		this.generation = generation;
-	}
-
-	public int getGeneration(){
-		return generation;
-	}
-
-	public void setWebsites(List<Integer> websites){
-		this.websites = websites;
-	}
-
-	public List<Integer> getWebsites(){
-		return websites;
-	}
-
-	public void setAlternativeName(String alternativeName){
-		this.alternativeName = alternativeName;
-	}
-
-	public String getAlternativeName(){
-		return alternativeName;
+	public int getPlatformLogo(){
+		return platformLogo;
 	}
 
 	@Override
  	public String toString(){
 		return 
 			"PlatformsItem{" + 
-			"product_family = '" + productFamily + '\'' + 
+			"generation = '" + generation + '\'' + 
+			",summary = '" + summary + '\'' + 
+			",product_family = '" + productFamily + '\'' + 
+			",alternative_name = '" + alternativeName + '\'' + 
+			",created_at = '" + createdAt + '\'' + 
+			",abbreviation = '" + abbreviation + '\'' + 
+			",url = '" + url + '\'' + 
 			",updated_at = '" + updatedAt + '\'' + 
 			",versions = '" + versions + '\'' + 
 			",name = '" + name + '\'' + 
-			",created_at = '" + createdAt + '\'' + 
-			",platform_logo = '" + platformLogo + '\'' + 
+			",websites = '" + websites + '\'' + 
 			",id = '" + id + '\'' + 
-			",abbreviation = '" + abbreviation + '\'' + 
 			",category = '" + category + '\'' + 
 			",slug = '" + slug + '\'' + 
-			",url = '" + url + '\'' + 
-			",generation = '" + generation + '\'' + 
-			",websites = '" + websites + '\'' + 
-			",alternative_name = '" + alternativeName + '\'' + 
+			",platform_logo = '" + platformLogo + '\'' + 
 			"}";
 		}
 }

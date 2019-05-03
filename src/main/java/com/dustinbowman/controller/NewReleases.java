@@ -1,7 +1,6 @@
 package com.dustinbowman.controller;
 
 import com.dustinbowman.persistence.ClientService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.igdb.api.GameResults;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,12 +24,13 @@ public class NewReleases extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ClientService cs = new ClientService();
-        String params = "fields name, summary, release_dates, cover.url, release_dates.human;where popularity > 80 & release_dates.date > 1555200000 & release_dates.platform = (6); limit 10;";
-
+        Long currentTime = System.currentTimeMillis() / 1000L;
+        String params = "fields name, summary, release_dates, cover.url, release_dates.human;where popularity > 80 & "
+                + "release_dates.date > " + currentTime + " & release_dates.platform = (6); limit 10; sort name asc;";
         List<GameResults> gameList;
         gameList = cs.getApiGame(params);
         req.setAttribute("games", gameList);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/newGames.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req,resp);
 
     }

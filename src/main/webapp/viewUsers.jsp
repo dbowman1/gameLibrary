@@ -8,16 +8,25 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<jsp:include page="../head.jsp"/>
-<jsp:include page="../navbar.jsp"/>
+<jsp:include page="head.jsp"/>
+<script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('#usersTable').DataTable();
+    } );
+</script>
 <body>
+<jsp:include page="navbar.jsp"/>
 <a href="admin.jsp">Admin</a>
-<h2>Users</h2>
-<table>
+<h2 class="text-center">Users</h2>
+<c:if test="${not empty msg}">
+    <h3 class="alert alert-danger text-center" role="alert">${msg}</h3>
+</c:if>
+<table id="usersTable">
     <thead>
     <tr>
     <th>User</th>
     <th>Email</th>
+    <th>Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -25,9 +34,13 @@
         <tr>
             <td>${user.userName}</td>
             <td>${user.email}</td>
+            <td>
+                <a href="deleteUser?id=${user.id}"><i class="fas fa-trash-alt"></i></a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

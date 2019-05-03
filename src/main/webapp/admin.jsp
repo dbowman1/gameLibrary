@@ -8,15 +8,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<jsp:include page="../head.jsp"/>
+<jsp:include page="head.jsp"/>
 
 
 <body>
-<jsp:include page="../navbar.jsp"/>
+<jsp:include page="navbar.jsp"/>
 <%--#TODO DELETE or edit this jsp LATER only for a test--%>
 <h4>This is a admin only page.</h4>
 <br/>
 <a href="viewUsers">All Users</a>
+<jsp:include page="footer.jsp"/>
 </body>
-<jsp:include page="../footer.jsp"/>
 </html>
