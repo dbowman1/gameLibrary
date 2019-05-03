@@ -16,7 +16,7 @@
 
 <c:forEach var="game" items="${games}">
     <div class="panel panel-default col-md-6">
-        <h2 class="centerTxt" style="text-align:center;">${game.name}</h2>
+        <h2 class="centerTxt" style="text-align:center;"><a href="game?id=${game.id}">${game.name}</a></h2>
         <div class="panel-heading centerTxt" style="text-align:center;">
             <a href="game?id=${game.id}"><img src="${empty game.cover.url ? 'https://via.placeholder.com/90': game.cover.url}" alt="${game.name} image"/></a>
         </div>
