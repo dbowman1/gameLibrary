@@ -13,7 +13,7 @@
     </form-login-config>
   </login-config>
 
-  <!-- Protect the test page #TODO change name when relevant. -->
+
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>admin</web-resource-name>

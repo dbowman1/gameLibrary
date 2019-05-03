@@ -16,7 +16,6 @@
 </script>
 <body>
 <jsp:include page="navbar.jsp"/>
-<a href="admin.jsp">Admin</a>
 <h2 class="text-center">Users</h2>
 <c:if test="${not empty msg}">
     <h3 class="alert alert-danger text-center" role="alert">${msg}</h3>

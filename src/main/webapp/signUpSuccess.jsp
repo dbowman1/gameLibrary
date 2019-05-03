@@ -12,7 +12,7 @@
 
 <body>
 <jsp:include page="navbar.jsp"/>
-<%--#TODO fancy up success page--%>
+
 <c:choose>
     <c:when test="${errorMessage == null}">
         <div class="alert alert-success" role="alert">

@@ -13,10 +13,13 @@
 
 <body>
 <jsp:include page="navbar.jsp"/>
-<%--#TODO DELETE or edit this jsp LATER only for a test--%>
-<h4>This is a admin only page.</h4>
+
+<h4 class="text-center">Admin</h4>
 <br/>
-<a href="viewUsers">All Users</a>
+<div class="text-center">
+    <a href="viewUsers"><button type="button" class="btn btn-default">All Users</button></a>
+</div>
+
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

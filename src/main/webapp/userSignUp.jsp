@@ -11,7 +11,6 @@
 
 <body>
 <jsp:include page="navbar.jsp"/>
-<%--#TODO Fancy up sign up page--%>
 <h2 class="text-center">Sign Up</h2>
 <div class = "container col-md-offset-3 col-md-9">
     <form id="signUpForm" role="form" data-toggle="validator" class="form-horizontal"

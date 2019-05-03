@@ -11,7 +11,6 @@
 
 <body>
 <jsp:include page="navbar.jsp"/>
-<%--#TODO fancy up error page?--%>
 <div class="alert alert-danger" role="alert">
     Login failed... please try again.
     <br/><br/>
