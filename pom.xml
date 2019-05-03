@@ -12,7 +12,7 @@
     <name>gameLibrary Maven Webapp</name>
     <url>http://www.example.com</url>
     <build>
-        <finalName>Game Library</finalName>
+        <finalName>gameLibrary</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

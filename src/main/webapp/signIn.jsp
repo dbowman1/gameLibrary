@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<jsp:include page="./head.jsp"/>
+<jsp:include page="head.jsp"/>
 
 <body>
-<jsp:include page="./navbar.jsp"/>
+<jsp:include page="navbar.jsp"/>
         <h2 class="text-center">Sign In</h2>
         <form class="col-md-4 col-md-offset-4" role="form" action="j_security_check" method="post">
             <div class="form-group">
@@ -25,6 +25,6 @@
         </form>
     </div>
 
-<jsp:include page="./footer.jsp"/>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

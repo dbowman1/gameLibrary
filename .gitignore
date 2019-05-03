@@ -68,3 +68,4 @@ context.xml
 config.properties
 src/main/resources/config.properties
 src/test/resources/config.properties
+src/main/webapp/META-INF
