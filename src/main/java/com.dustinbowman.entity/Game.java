@@ -9,6 +9,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The type Game.
+ */
 @Data
 @Entity(name = "Game")
 @Table(name = "games")

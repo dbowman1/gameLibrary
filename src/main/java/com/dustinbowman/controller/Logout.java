@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * The type Logout.
+ */
 @WebServlet(name="Logout", urlPatterns = {"/logout"})
 public class Logout  extends HttpServlet {
 

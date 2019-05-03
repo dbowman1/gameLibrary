@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type User sign up.
+ */
 @WebServlet(name = "UserSignUp", urlPatterns = {"/userSignUp"})
 
 public class UserSignUp extends HttpServlet {

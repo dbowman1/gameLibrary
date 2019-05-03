@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The type Paginate list.
+ *
+ * @param <T> the type parameter
+ */
 public class PaginateList<T> {
 
     private static final int DEFAULT_PAGE_SIZE = 10;
@@ -12,17 +17,34 @@ public class PaginateList<T> {
     private int pageSize = DEFAULT_PAGE_SIZE;
     private int currentPage = 0;
 
+    /**
+     * Instantiates a new Paginate list.
+     *
+     * @param list the list
+     */
     public PaginateList(List<T> list) {
         this.list = list;
         initPages();
     }
 
+    /**
+     * Instantiates a new Paginate list.
+     *
+     * @param list     the list
+     * @param pageSize the page size
+     */
     public PaginateList(List<T> list, int pageSize) {
         this.list = list;
         this.pageSize = pageSize;
         initPages();
     }
 
+    /**
+     * Gets page.
+     *
+     * @param pageNumber the page number
+     * @return the page
+     */
     public List<T> getPage(int pageNumber) {
         if (listOfPages == null ||
                 pageNumber > listOfPages.size() ||
@@ -35,6 +57,11 @@ public class PaginateList<T> {
         return page;
     }
 
+    /**
+     * Number of pages int.
+     *
+     * @return the int
+     */
     public int numberOfPages() {
         if (listOfPages == null) {
             return 0;
@@ -43,16 +70,29 @@ public class PaginateList<T> {
         return listOfPages.size();
     }
 
+    /**
+     * Next page list.
+     *
+     * @return the list
+     */
     public List<T> nextPage() {
         List<T> page = getPage(++currentPage);
         return page;
     }
 
+    /**
+     * Previous page list.
+     *
+     * @return the list
+     */
     public List<T> previousPage() {
         List<T> page = getPage(--currentPage);
         return page;
     }
 
+    /**
+     * Init pages.
+     */
     public void initPages() {
         if (list == null || listOfPages != null) {
             return;

@@ -101,9 +101,10 @@ public class GenericDao<T> {
 
     /**
      * Finds entities by one of its properties.
+     *
      * @param propertyName the property name.
-     * @param value the value by which to find.
-     * @return
+     * @param value        the value by which to find.
+     * @return list
      */
     public List<T> findByPropertyEqual(String propertyName, Object value) {
         Session session = getSession();

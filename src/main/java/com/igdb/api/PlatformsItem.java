@@ -4,6 +4,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Platforms item.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class PlatformsItem{
 
@@ -52,123 +55,273 @@ public class PlatformsItem{
 	@JsonProperty("platform_logo")
 	private int platformLogo;
 
-	public void setGeneration(int generation){
+    /**
+     * Set generation.
+     *
+     * @param generation the generation
+     */
+    public void setGeneration(int generation){
 		this.generation = generation;
 	}
 
-	public int getGeneration(){
+    /**
+     * Get generation int.
+     *
+     * @return the int
+     */
+    public int getGeneration(){
 		return generation;
 	}
 
-	public void setSummary(String summary){
+    /**
+     * Set summary.
+     *
+     * @param summary the summary
+     */
+    public void setSummary(String summary){
 		this.summary = summary;
 	}
 
-	public String getSummary(){
+    /**
+     * Get summary string.
+     *
+     * @return the string
+     */
+    public String getSummary(){
 		return summary;
 	}
 
-	public void setProductFamily(int productFamily){
+    /**
+     * Set product family.
+     *
+     * @param productFamily the product family
+     */
+    public void setProductFamily(int productFamily){
 		this.productFamily = productFamily;
 	}
 
-	public int getProductFamily(){
+    /**
+     * Get product family int.
+     *
+     * @return the int
+     */
+    public int getProductFamily(){
 		return productFamily;
 	}
 
-	public void setAlternativeName(String alternativeName){
+    /**
+     * Set alternative name.
+     *
+     * @param alternativeName the alternative name
+     */
+    public void setAlternativeName(String alternativeName){
 		this.alternativeName = alternativeName;
 	}
 
-	public String getAlternativeName(){
+    /**
+     * Get alternative name string.
+     *
+     * @return the string
+     */
+    public String getAlternativeName(){
 		return alternativeName;
 	}
 
-	public void setCreatedAt(int createdAt){
+    /**
+     * Set created at.
+     *
+     * @param createdAt the created at
+     */
+    public void setCreatedAt(int createdAt){
 		this.createdAt = createdAt;
 	}
 
-	public int getCreatedAt(){
+    /**
+     * Get created at int.
+     *
+     * @return the int
+     */
+    public int getCreatedAt(){
 		return createdAt;
 	}
 
-	public void setAbbreviation(String abbreviation){
+    /**
+     * Set abbreviation.
+     *
+     * @param abbreviation the abbreviation
+     */
+    public void setAbbreviation(String abbreviation){
 		this.abbreviation = abbreviation;
 	}
 
-	public String getAbbreviation(){
+    /**
+     * Get abbreviation string.
+     *
+     * @return the string
+     */
+    public String getAbbreviation(){
 		return abbreviation;
 	}
 
-	public void setUrl(String url){
+    /**
+     * Set url.
+     *
+     * @param url the url
+     */
+    public void setUrl(String url){
 		this.url = url;
 	}
 
-	public String getUrl(){
+    /**
+     * Get url string.
+     *
+     * @return the string
+     */
+    public String getUrl(){
 		return url;
 	}
 
-	public void setUpdatedAt(int updatedAt){
+    /**
+     * Set updated at.
+     *
+     * @param updatedAt the updated at
+     */
+    public void setUpdatedAt(int updatedAt){
 		this.updatedAt = updatedAt;
 	}
 
-	public int getUpdatedAt(){
+    /**
+     * Get updated at int.
+     *
+     * @return the int
+     */
+    public int getUpdatedAt(){
 		return updatedAt;
 	}
 
-	public void setVersions(List<Integer> versions){
+    /**
+     * Set versions.
+     *
+     * @param versions the versions
+     */
+    public void setVersions(List<Integer> versions){
 		this.versions = versions;
 	}
 
-	public List<Integer> getVersions(){
+    /**
+     * Get versions list.
+     *
+     * @return the list
+     */
+    public List<Integer> getVersions(){
 		return versions;
 	}
 
-	public void setName(String name){
+    /**
+     * Set name.
+     *
+     * @param name the name
+     */
+    public void setName(String name){
 		this.name = name;
 	}
 
-	public String getName(){
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
+    public String getName(){
 		return name;
 	}
 
-	public void setWebsites(List<Integer> websites){
+    /**
+     * Set websites.
+     *
+     * @param websites the websites
+     */
+    public void setWebsites(List<Integer> websites){
 		this.websites = websites;
 	}
 
-	public List<Integer> getWebsites(){
+    /**
+     * Get websites list.
+     *
+     * @return the list
+     */
+    public List<Integer> getWebsites(){
 		return websites;
 	}
 
-	public void setId(int id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(int id){
 		this.id = id;
 	}
 
-	public int getId(){
+    /**
+     * Get id int.
+     *
+     * @return the int
+     */
+    public int getId(){
 		return id;
 	}
 
-	public void setCategory(int category){
+    /**
+     * Set category.
+     *
+     * @param category the category
+     */
+    public void setCategory(int category){
 		this.category = category;
 	}
 
-	public int getCategory(){
+    /**
+     * Get category int.
+     *
+     * @return the int
+     */
+    public int getCategory(){
 		return category;
 	}
 
-	public void setSlug(String slug){
+    /**
+     * Set slug.
+     *
+     * @param slug the slug
+     */
+    public void setSlug(String slug){
 		this.slug = slug;
 	}
 
-	public String getSlug(){
+    /**
+     * Get slug string.
+     *
+     * @return the string
+     */
+    public String getSlug(){
 		return slug;
 	}
 
-	public void setPlatformLogo(int platformLogo){
+    /**
+     * Set platform logo.
+     *
+     * @param platformLogo the platform logo
+     */
+    public void setPlatformLogo(int platformLogo){
 		this.platformLogo = platformLogo;
 	}
 
-	public int getPlatformLogo(){
+    /**
+     * Get platform logo int.
+     *
+     * @return the int
+     */
+    public int getPlatformLogo(){
 		return platformLogo;
 	}
 

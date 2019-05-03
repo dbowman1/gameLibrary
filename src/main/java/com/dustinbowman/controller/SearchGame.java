@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type Search game.
+ */
 @WebServlet (name="SearchGame", urlPatterns = {"/search"})
 
 public class SearchGame extends HttpServlet {

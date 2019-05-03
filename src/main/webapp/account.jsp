@@ -57,6 +57,7 @@
                 data-disable="true">Update Account
         </button>
         <button type="reset" class="btn btn-default">Clear</button>
+        <br/><br/>
         <a href="removeAllGames"><button type="button" class="btn btn-danger">Remove All Games</button></a>
     </form>
     <a href=""></a>

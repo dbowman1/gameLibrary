@@ -17,6 +17,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * The type Client service.
+ */
 public class ClientService implements PropertiesLoader {
 
     private List<GameResults> apiGameResults;
@@ -24,6 +27,9 @@ public class ClientService implements PropertiesLoader {
     private String apikey;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Instantiates a new Client service.
+     */
     public ClientService() {
         Properties properties = loadProperties("/config.properties");
         gameUrl = properties.getProperty("gamesUrl");
@@ -31,6 +37,12 @@ public class ClientService implements PropertiesLoader {
         apiGameResults = new ArrayList<>();
     }
 
+    /**
+     * Gets api game.
+     *
+     * @param params the params
+     * @return the api game
+     */
     public List getApiGame(String params)  {
 
         try {

@@ -25,6 +25,9 @@ import java.util.concurrent.TimeUnit;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Game details.
+ */
 @WebServlet (name="GameDetails", urlPatterns = {"/game"})
 
 public class GameDetails extends HttpServlet {

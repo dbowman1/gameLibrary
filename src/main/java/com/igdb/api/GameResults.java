@@ -4,6 +4,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Game results.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class GameResults{
 
@@ -103,259 +106,579 @@ public class GameResults{
 	@JsonProperty("involved_companies")
 	private List<Integer> involvedCompanies;
 
-	public void setFranchise(int franchise){
+    /**
+     * Set franchise.
+     *
+     * @param franchise the franchise
+     */
+    public void setFranchise(int franchise){
 		this.franchise = franchise;
 	}
 
-	public int getFranchise(){
+    /**
+     * Get franchise int.
+     *
+     * @return the int
+     */
+    public int getFranchise(){
 		return franchise;
 	}
 
-	public void setKeywords(List<Integer> keywords){
+    /**
+     * Set keywords.
+     *
+     * @param keywords the keywords
+     */
+    public void setKeywords(List<Integer> keywords){
 		this.keywords = keywords;
 	}
 
-	public List<Integer> getKeywords(){
+    /**
+     * Get keywords list.
+     *
+     * @return the list
+     */
+    public List<Integer> getKeywords(){
 		return keywords;
 	}
 
-	public void setSimilarGames(List<Integer> similarGames){
+    /**
+     * Set similar games.
+     *
+     * @param similarGames the similar games
+     */
+    public void setSimilarGames(List<Integer> similarGames){
 		this.similarGames = similarGames;
 	}
 
-	public List<Integer> getSimilarGames(){
+    /**
+     * Get similar games list.
+     *
+     * @return the list
+     */
+    public List<Integer> getSimilarGames(){
 		return similarGames;
 	}
 
-	public void setCreatedAt(int createdAt){
+    /**
+     * Set created at.
+     *
+     * @param createdAt the created at
+     */
+    public void setCreatedAt(int createdAt){
 		this.createdAt = createdAt;
 	}
 
-	public int getCreatedAt(){
+    /**
+     * Get created at int.
+     *
+     * @return the int
+     */
+    public int getCreatedAt(){
 		return createdAt;
 	}
 
-	public void setVideos(List<VideosItem> videos){
+    /**
+     * Set videos.
+     *
+     * @param videos the videos
+     */
+    public void setVideos(List<VideosItem> videos){
 		this.videos = videos;
 	}
 
-	public List<VideosItem> getVideos(){
+    /**
+     * Get videos list.
+     *
+     * @return the list
+     */
+    public List<VideosItem> getVideos(){
 		return videos;
 	}
 
-	public void setPlayerPerspectives(List<Integer> playerPerspectives){
+    /**
+     * Set player perspectives.
+     *
+     * @param playerPerspectives the player perspectives
+     */
+    public void setPlayerPerspectives(List<Integer> playerPerspectives){
 		this.playerPerspectives = playerPerspectives;
 	}
 
-	public List<Integer> getPlayerPerspectives(){
+    /**
+     * Get player perspectives list.
+     *
+     * @return the list
+     */
+    public List<Integer> getPlayerPerspectives(){
 		return playerPerspectives;
 	}
 
-	public void setScreenshots(List<ScreenshotsItem> screenshots){
+    /**
+     * Set screenshots.
+     *
+     * @param screenshots the screenshots
+     */
+    public void setScreenshots(List<ScreenshotsItem> screenshots){
 		this.screenshots = screenshots;
 	}
 
-	public List<ScreenshotsItem> getScreenshots(){
+    /**
+     * Get screenshots list.
+     *
+     * @return the list
+     */
+    public List<ScreenshotsItem> getScreenshots(){
 		return screenshots;
 	}
 
-	public void setPlatforms(List<Integer> platforms){
+    /**
+     * Set platforms.
+     *
+     * @param platforms the platforms
+     */
+    public void setPlatforms(List<Integer> platforms){
 		this.platforms = platforms;
 	}
 
-	public List<Integer> getPlatforms(){
+    /**
+     * Get platforms list.
+     *
+     * @return the list
+     */
+    public List<Integer> getPlatforms(){
 		return platforms;
 	}
 
-	public void setCover(Cover cover){
+    /**
+     * Set cover.
+     *
+     * @param cover the cover
+     */
+    public void setCover(Cover cover){
 		this.cover = cover;
 	}
 
-	public Cover getCover(){
+    /**
+     * Get cover cover.
+     *
+     * @return the cover
+     */
+    public Cover getCover(){
 		return cover;
 	}
 
-	public void setThemes(List<ThemesItem> themes){
+    /**
+     * Set themes.
+     *
+     * @param themes the themes
+     */
+    public void setThemes(List<ThemesItem> themes){
 		this.themes = themes;
 	}
 
-	public List<ThemesItem> getThemes(){
+    /**
+     * Get themes list.
+     *
+     * @return the list
+     */
+    public List<ThemesItem> getThemes(){
 		return themes;
 	}
 
-	public void setAgeRatings(List<Integer> ageRatings){
+    /**
+     * Set age ratings.
+     *
+     * @param ageRatings the age ratings
+     */
+    public void setAgeRatings(List<Integer> ageRatings){
 		this.ageRatings = ageRatings;
 	}
 
-	public List<Integer> getAgeRatings(){
+    /**
+     * Get age ratings list.
+     *
+     * @return the list
+     */
+    public List<Integer> getAgeRatings(){
 		return ageRatings;
 	}
 
-	public void setPulseCount(int pulseCount){
+    /**
+     * Set pulse count.
+     *
+     * @param pulseCount the pulse count
+     */
+    public void setPulseCount(int pulseCount){
 		this.pulseCount = pulseCount;
 	}
 
-	public int getPulseCount(){
+    /**
+     * Get pulse count int.
+     *
+     * @return the int
+     */
+    public int getPulseCount(){
 		return pulseCount;
 	}
 
-	public void setUpdatedAt(int updatedAt){
+    /**
+     * Set updated at.
+     *
+     * @param updatedAt the updated at
+     */
+    public void setUpdatedAt(int updatedAt){
 		this.updatedAt = updatedAt;
 	}
 
-	public int getUpdatedAt(){
+    /**
+     * Get updated at int.
+     *
+     * @return the int
+     */
+    public int getUpdatedAt(){
 		return updatedAt;
 	}
 
-	public void setFirstReleaseDate(int firstReleaseDate){
+    /**
+     * Set first release date.
+     *
+     * @param firstReleaseDate the first release date
+     */
+    public void setFirstReleaseDate(int firstReleaseDate){
 		this.firstReleaseDate = firstReleaseDate;
 	}
 
-	public int getFirstReleaseDate(){
+    /**
+     * Get first release date int.
+     *
+     * @return the int
+     */
+    public int getFirstReleaseDate(){
 		return firstReleaseDate;
 	}
 
-	public void setGenres(List<Integer> genres){
+    /**
+     * Set genres.
+     *
+     * @param genres the genres
+     */
+    public void setGenres(List<Integer> genres){
 		this.genres = genres;
 	}
 
-	public List<Integer> getGenres(){
+    /**
+     * Get genres list.
+     *
+     * @return the list
+     */
+    public List<Integer> getGenres(){
 		return genres;
 	}
 
-	public void setPopularity(double popularity){
+    /**
+     * Set popularity.
+     *
+     * @param popularity the popularity
+     */
+    public void setPopularity(double popularity){
 		this.popularity = popularity;
 	}
 
-	public double getPopularity(){
+    /**
+     * Get popularity double.
+     *
+     * @return the double
+     */
+    public double getPopularity(){
 		return popularity;
 	}
 
-	public void setReleaseDates(List<ReleaseDatesItem> releaseDates){
+    /**
+     * Set release dates.
+     *
+     * @param releaseDates the release dates
+     */
+    public void setReleaseDates(List<ReleaseDatesItem> releaseDates){
 		this.releaseDates = releaseDates;
 	}
 
-	public List<ReleaseDatesItem> getReleaseDates(){
+    /**
+     * Get release dates list.
+     *
+     * @return the list
+     */
+    public List<ReleaseDatesItem> getReleaseDates(){
 		return releaseDates;
 	}
 
-	public void setId(int id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(int id){
 		this.id = id;
 	}
 
-	public int getId(){
+    /**
+     * Get id int.
+     *
+     * @return the int
+     */
+    public int getId(){
 		return id;
 	}
 
-	public void setSlug(String slug){
+    /**
+     * Set slug.
+     *
+     * @param slug the slug
+     */
+    public void setSlug(String slug){
 		this.slug = slug;
 	}
 
-	public String getSlug(){
+    /**
+     * Get slug string.
+     *
+     * @return the string
+     */
+    public String getSlug(){
 		return slug;
 	}
 
-	public void setHypes(int hypes){
+    /**
+     * Set hypes.
+     *
+     * @param hypes the hypes
+     */
+    public void setHypes(int hypes){
 		this.hypes = hypes;
 	}
 
-	public int getHypes(){
+    /**
+     * Get hypes int.
+     *
+     * @return the int
+     */
+    public int getHypes(){
 		return hypes;
 	}
 
-	public void setFranchises(List<Integer> franchises){
+    /**
+     * Set franchises.
+     *
+     * @param franchises the franchises
+     */
+    public void setFranchises(List<Integer> franchises){
 		this.franchises = franchises;
 	}
 
-	public List<Integer> getFranchises(){
+    /**
+     * Get franchises list.
+     *
+     * @return the list
+     */
+    public List<Integer> getFranchises(){
 		return franchises;
 	}
 
-	public void setSummary(String summary){
+    /**
+     * Set summary.
+     *
+     * @param summary the summary
+     */
+    public void setSummary(String summary){
 		this.summary = summary;
 	}
 
-	public String getSummary(){
+    /**
+     * Get summary string.
+     *
+     * @return the string
+     */
+    public String getSummary(){
 		return summary;
 	}
 
-	public void setGameModes(List<Integer> gameModes){
+    /**
+     * Set game modes.
+     *
+     * @param gameModes the game modes
+     */
+    public void setGameModes(List<Integer> gameModes){
 		this.gameModes = gameModes;
 	}
 
-	public List<Integer> getGameModes(){
+    /**
+     * Get game modes list.
+     *
+     * @return the list
+     */
+    public List<Integer> getGameModes(){
 		return gameModes;
 	}
 
-	public void setExternalGames(List<Integer> externalGames){
+    /**
+     * Set external games.
+     *
+     * @param externalGames the external games
+     */
+    public void setExternalGames(List<Integer> externalGames){
 		this.externalGames = externalGames;
 	}
 
-	public List<Integer> getExternalGames(){
+    /**
+     * Get external games list.
+     *
+     * @return the list
+     */
+    public List<Integer> getExternalGames(){
 		return externalGames;
 	}
 
-	public void setCollection(int collection){
+    /**
+     * Set collection.
+     *
+     * @param collection the collection
+     */
+    public void setCollection(int collection){
 		this.collection = collection;
 	}
 
-	public int getCollection(){
+    /**
+     * Get collection int.
+     *
+     * @return the int
+     */
+    public int getCollection(){
 		return collection;
 	}
 
-	public void setUrl(String url){
+    /**
+     * Set url.
+     *
+     * @param url the url
+     */
+    public void setUrl(String url){
 		this.url = url;
 	}
 
-	public String getUrl(){
+    /**
+     * Get url string.
+     *
+     * @return the string
+     */
+    public String getUrl(){
 		return url;
 	}
 
-	public void setTags(List<Integer> tags){
+    /**
+     * Set tags.
+     *
+     * @param tags the tags
+     */
+    public void setTags(List<Integer> tags){
 		this.tags = tags;
 	}
 
-	public List<Integer> getTags(){
+    /**
+     * Get tags list.
+     *
+     * @return the list
+     */
+    public List<Integer> getTags(){
 		return tags;
 	}
 
-	public void setArtworks(List<ArtworksItem> artworks){
+    /**
+     * Set artworks.
+     *
+     * @param artworks the artworks
+     */
+    public void setArtworks(List<ArtworksItem> artworks){
 		this.artworks = artworks;
 	}
 
-	public List<ArtworksItem> getArtworks(){
+    /**
+     * Get artworks list.
+     *
+     * @return the list
+     */
+    public List<ArtworksItem> getArtworks(){
 		return artworks;
 	}
 
-	public void setName(String name){
+    /**
+     * Set name.
+     *
+     * @param name the name
+     */
+    public void setName(String name){
 		this.name = name;
 	}
 
-	public String getName(){
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
+    public String getName(){
 		return name;
 	}
 
-	public void setWebsites(List<WebsitesItem> websites){
+    /**
+     * Set websites.
+     *
+     * @param websites the websites
+     */
+    public void setWebsites(List<WebsitesItem> websites){
 		this.websites = websites;
 	}
 
-	public List<WebsitesItem> getWebsites(){
+    /**
+     * Get websites list.
+     *
+     * @return the list
+     */
+    public List<WebsitesItem> getWebsites(){
 		return websites;
 	}
 
-	public void setCategory(int category){
+    /**
+     * Set category.
+     *
+     * @param category the category
+     */
+    public void setCategory(int category){
 		this.category = category;
 	}
 
-	public int getCategory(){
+    /**
+     * Get category int.
+     *
+     * @return the int
+     */
+    public int getCategory(){
 		return category;
 	}
 
-	public void setInvolvedCompanies(List<Integer> involvedCompanies){
+    /**
+     * Set involved companies.
+     *
+     * @param involvedCompanies the involved companies
+     */
+    public void setInvolvedCompanies(List<Integer> involvedCompanies){
 		this.involvedCompanies = involvedCompanies;
 	}
 
-	public List<Integer> getInvolvedCompanies(){
+    /**
+     * Get involved companies list.
+     *
+     * @return the list
+     */
+    public List<Integer> getInvolvedCompanies(){
 		return involvedCompanies;
 	}
 

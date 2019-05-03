@@ -3,6 +3,9 @@ package com.igdb.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Artworks item.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class ArtworksItem{
 
@@ -30,67 +33,147 @@ public class ArtworksItem{
 	@JsonProperty("height")
 	private int height;
 
-	public void setGame(int game){
+    /**
+     * Set game.
+     *
+     * @param game the game
+     */
+    public void setGame(int game){
 		this.game = game;
 	}
 
-	public int getGame(){
+    /**
+     * Get game int.
+     *
+     * @return the int
+     */
+    public int getGame(){
 		return game;
 	}
 
-	public void setAlphaChannel(boolean alphaChannel){
+    /**
+     * Set alpha channel.
+     *
+     * @param alphaChannel the alpha channel
+     */
+    public void setAlphaChannel(boolean alphaChannel){
 		this.alphaChannel = alphaChannel;
 	}
 
-	public boolean isAlphaChannel(){
+    /**
+     * Is alpha channel boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isAlphaChannel(){
 		return alphaChannel;
 	}
 
-	public void setWidth(int width){
+    /**
+     * Set width.
+     *
+     * @param width the width
+     */
+    public void setWidth(int width){
 		this.width = width;
 	}
 
-	public int getWidth(){
+    /**
+     * Get width int.
+     *
+     * @return the int
+     */
+    public int getWidth(){
 		return width;
 	}
 
-	public void setAnimated(boolean animated){
+    /**
+     * Set animated.
+     *
+     * @param animated the animated
+     */
+    public void setAnimated(boolean animated){
 		this.animated = animated;
 	}
 
-	public boolean isAnimated(){
+    /**
+     * Is animated boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isAnimated(){
 		return animated;
 	}
 
-	public void setId(int id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(int id){
 		this.id = id;
 	}
 
-	public int getId(){
+    /**
+     * Get id int.
+     *
+     * @return the int
+     */
+    public int getId(){
 		return id;
 	}
 
-	public void setImageId(String imageId){
+    /**
+     * Set image id.
+     *
+     * @param imageId the image id
+     */
+    public void setImageId(String imageId){
 		this.imageId = imageId;
 	}
 
-	public String getImageId(){
+    /**
+     * Get image id string.
+     *
+     * @return the string
+     */
+    public String getImageId(){
 		return imageId;
 	}
 
-	public void setUrl(String url){
+    /**
+     * Set url.
+     *
+     * @param url the url
+     */
+    public void setUrl(String url){
 		this.url = url;
 	}
 
-	public String getUrl(){
+    /**
+     * Get url string.
+     *
+     * @return the string
+     */
+    public String getUrl(){
 		return url;
 	}
 
-	public void setHeight(int height){
+    /**
+     * Set height.
+     *
+     * @param height the height
+     */
+    public void setHeight(int height){
 		this.height = height;
 	}
 
-	public int getHeight(){
+    /**
+     * Get height int.
+     *
+     * @return the int
+     */
+    public int getHeight(){
 		return height;
 	}
 

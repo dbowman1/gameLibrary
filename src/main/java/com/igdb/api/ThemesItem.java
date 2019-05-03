@@ -3,6 +3,9 @@ package com.igdb.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Themes item.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class ThemesItem{
 
@@ -24,51 +27,111 @@ public class ThemesItem{
 	@JsonProperty("url")
 	private String url;
 
-	public void setUpdatedAt(int updatedAt){
+    /**
+     * Set updated at.
+     *
+     * @param updatedAt the updated at
+     */
+    public void setUpdatedAt(int updatedAt){
 		this.updatedAt = updatedAt;
 	}
 
-	public int getUpdatedAt(){
+    /**
+     * Get updated at int.
+     *
+     * @return the int
+     */
+    public int getUpdatedAt(){
 		return updatedAt;
 	}
 
-	public void setName(String name){
+    /**
+     * Set name.
+     *
+     * @param name the name
+     */
+    public void setName(String name){
 		this.name = name;
 	}
 
-	public String getName(){
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
+    public String getName(){
 		return name;
 	}
 
-	public void setCreatedAt(int createdAt){
+    /**
+     * Set created at.
+     *
+     * @param createdAt the created at
+     */
+    public void setCreatedAt(int createdAt){
 		this.createdAt = createdAt;
 	}
 
-	public int getCreatedAt(){
+    /**
+     * Get created at int.
+     *
+     * @return the int
+     */
+    public int getCreatedAt(){
 		return createdAt;
 	}
 
-	public void setId(int id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(int id){
 		this.id = id;
 	}
 
-	public int getId(){
+    /**
+     * Get id int.
+     *
+     * @return the int
+     */
+    public int getId(){
 		return id;
 	}
 
-	public void setSlug(String slug){
+    /**
+     * Set slug.
+     *
+     * @param slug the slug
+     */
+    public void setSlug(String slug){
 		this.slug = slug;
 	}
 
-	public String getSlug(){
+    /**
+     * Get slug string.
+     *
+     * @return the string
+     */
+    public String getSlug(){
 		return slug;
 	}
 
-	public void setUrl(String url){
+    /**
+     * Set url.
+     *
+     * @param url the url
+     */
+    public void setUrl(String url){
 		this.url = url;
 	}
 
-	public String getUrl(){
+    /**
+     * Get url string.
+     *
+     * @return the string
+     */
+    public String getUrl(){
 		return url;
 	}
 

@@ -3,6 +3,9 @@ package com.igdb.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Websites item.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class WebsitesItem{
 
@@ -21,43 +24,93 @@ public class WebsitesItem{
 	@JsonProperty("url")
 	private String url;
 
-	public void setGame(int game){
+    /**
+     * Set game.
+     *
+     * @param game the game
+     */
+    public void setGame(int game){
 		this.game = game;
 	}
 
-	public int getGame(){
+    /**
+     * Get game int.
+     *
+     * @return the int
+     */
+    public int getGame(){
 		return game;
 	}
 
-	public void setTrusted(boolean trusted){
+    /**
+     * Set trusted.
+     *
+     * @param trusted the trusted
+     */
+    public void setTrusted(boolean trusted){
 		this.trusted = trusted;
 	}
 
-	public boolean isTrusted(){
+    /**
+     * Is trusted boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isTrusted(){
 		return trusted;
 	}
 
-	public void setId(int id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(int id){
 		this.id = id;
 	}
 
-	public int getId(){
+    /**
+     * Get id int.
+     *
+     * @return the int
+     */
+    public int getId(){
 		return id;
 	}
 
-	public void setCategory(int category){
+    /**
+     * Set category.
+     *
+     * @param category the category
+     */
+    public void setCategory(int category){
 		this.category = category;
 	}
 
-	public int getCategory(){
+    /**
+     * Get category int.
+     *
+     * @return the int
+     */
+    public int getCategory(){
 		return category;
 	}
 
-	public void setUrl(String url){
+    /**
+     * Set url.
+     *
+     * @param url the url
+     */
+    public void setUrl(String url){
 		this.url = url;
 	}
 
-	public String getUrl(){
+    /**
+     * Get url string.
+     *
+     * @return the string
+     */
+    public String getUrl(){
 		return url;
 	}
 

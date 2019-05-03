@@ -3,6 +3,9 @@ package com.igdb.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Videos item.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class VideosItem{
 
@@ -18,35 +21,75 @@ public class VideosItem{
 	@JsonProperty("video_id")
 	private String videoId;
 
-	public void setGame(int game){
+    /**
+     * Set game.
+     *
+     * @param game the game
+     */
+    public void setGame(int game){
 		this.game = game;
 	}
 
-	public int getGame(){
+    /**
+     * Get game int.
+     *
+     * @return the int
+     */
+    public int getGame(){
 		return game;
 	}
 
-	public void setName(String name){
+    /**
+     * Set name.
+     *
+     * @param name the name
+     */
+    public void setName(String name){
 		this.name = name;
 	}
 
-	public String getName(){
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
+    public String getName(){
 		return name;
 	}
 
-	public void setId(int id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(int id){
 		this.id = id;
 	}
 
-	public int getId(){
+    /**
+     * Get id int.
+     *
+     * @return the int
+     */
+    public int getId(){
 		return id;
 	}
 
-	public void setVideoId(String videoId){
+    /**
+     * Set video id.
+     *
+     * @param videoId the video id
+     */
+    public void setVideoId(String videoId){
 		this.videoId = videoId;
 	}
 
-	public String getVideoId(){
+    /**
+     * Get video id string.
+     *
+     * @return the string
+     */
+    public String getVideoId(){
 		return videoId;
 	}
 

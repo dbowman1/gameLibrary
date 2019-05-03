@@ -5,6 +5,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
+/**
+ * The type Role.
+ */
 @Data
 @Entity(name = "Role")
 @Table(name = "roles")

@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type View users.
+ */
 @WebServlet(name = "ViewUsers", urlPatterns = {"/viewUsers"})
 
 public class ViewUsers extends HttpServlet {

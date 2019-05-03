@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * The type My library.
+ */
 @WebServlet(name="MyLibrary", urlPatterns = {"/myLibrary"})
 public class MyLibrary extends HttpServlet {
 

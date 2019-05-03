@@ -45,6 +45,7 @@ public class User implements Serializable {
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = @JoinColumn(name = "game_id"))
     Set<Game> games = new HashSet<Game>();
+
     /**
      * Add role.
      *
@@ -54,14 +55,27 @@ public class User implements Serializable {
         roles.add(role);
     }
 
+    /**
+     * Add game.
+     *
+     * @param g the g
+     */
     public void addGame(Game g) {
         games.add(g);
     }
 
+    /**
+     * Remove game.
+     *
+     * @param g the g
+     */
     public void removeGame(Game g) {
         games.remove(g);
     }
 
+    /**
+     * Remove all.
+     */
     public void removeAll() {
         for(Game game: new ArrayList<>(games)) {
             removeGame(game);

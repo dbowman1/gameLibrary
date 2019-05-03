@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type Remove all games.
+ */
 @WebServlet( name="RemoveAllGames", urlPatterns = {"/removeAllGames"})
 public class RemoveAllGames extends HttpServlet {
 

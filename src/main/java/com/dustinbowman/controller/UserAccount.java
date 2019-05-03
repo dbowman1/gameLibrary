@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type User account.
+ */
 @WebServlet (name = "UserAccount", urlPatterns = {"/userAccount"})
 public class UserAccount extends HttpServlet {
 

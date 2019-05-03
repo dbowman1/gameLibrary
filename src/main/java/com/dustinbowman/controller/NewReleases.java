@@ -15,6 +15,9 @@ import java.io.IOException;
 
 import java.util.List;
 
+/**
+ * The type New releases.
+ */
 @WebServlet (name="NewReleases", urlPatterns = {"/newReleases"})
 
 public class NewReleases extends HttpServlet {

@@ -15,6 +15,9 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Delete user.
+ */
 @WebServlet (name = "DeleteUser", urlPatterns = {"/deleteUser"})
 public class DeleteUser extends HttpServlet {
 

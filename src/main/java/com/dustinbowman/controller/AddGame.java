@@ -16,6 +16,9 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Add game.
+ */
 @WebServlet (name = "AddGame", urlPatterns = {"/addGame"})
 public class AddGame extends HttpServlet {
 

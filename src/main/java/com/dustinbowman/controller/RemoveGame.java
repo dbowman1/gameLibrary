@@ -16,6 +16,9 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Remove game.
+ */
 @WebServlet (name = "RemoveGame", urlPatterns = {"/removeGame"})
 
 public class RemoveGame extends HttpServlet {

@@ -3,6 +3,9 @@ package com.igdb.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Release dates item.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class ReleaseDatesItem{
 
@@ -39,91 +42,201 @@ public class ReleaseDatesItem{
 	@JsonProperty("platform")
 	private int platform;
 
-	public void setDate(int date){
+    /**
+     * Set date.
+     *
+     * @param date the date
+     */
+    public void setDate(int date){
 		this.date = date;
 	}
 
-	public int getDate(){
+    /**
+     * Get date int.
+     *
+     * @return the int
+     */
+    public int getDate(){
 		return date;
 	}
 
-	public void setGame(int game){
+    /**
+     * Set game.
+     *
+     * @param game the game
+     */
+    public void setGame(int game){
 		this.game = game;
 	}
 
-	public int getGame(){
+    /**
+     * Get game int.
+     *
+     * @return the int
+     */
+    public int getGame(){
 		return game;
 	}
 
-	public void setUpdatedAt(int updatedAt){
+    /**
+     * Set updated at.
+     *
+     * @param updatedAt the updated at
+     */
+    public void setUpdatedAt(int updatedAt){
 		this.updatedAt = updatedAt;
 	}
 
-	public int getUpdatedAt(){
+    /**
+     * Get updated at int.
+     *
+     * @return the int
+     */
+    public int getUpdatedAt(){
 		return updatedAt;
 	}
 
-	public void setCreatedAt(int createdAt){
+    /**
+     * Set created at.
+     *
+     * @param createdAt the created at
+     */
+    public void setCreatedAt(int createdAt){
 		this.createdAt = createdAt;
 	}
 
-	public int getCreatedAt(){
+    /**
+     * Get created at int.
+     *
+     * @return the int
+     */
+    public int getCreatedAt(){
 		return createdAt;
 	}
 
-	public void setY(int Y){
+    /**
+     * Set y.
+     *
+     * @param Y the y
+     */
+    public void setY(int Y){
 		this.Y = Y;
 	}
 
-	public int getY(){
+    /**
+     * Get y int.
+     *
+     * @return the int
+     */
+    public int getY(){
 		return Y;
 	}
 
-	public void setId(int id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(int id){
 		this.id = id;
 	}
 
-	public int getId(){
+    /**
+     * Get id int.
+     *
+     * @return the int
+     */
+    public int getId(){
 		return id;
 	}
 
-	public void setCategory(int category){
+    /**
+     * Set category.
+     *
+     * @param category the category
+     */
+    public void setCategory(int category){
 		this.category = category;
 	}
 
-	public int getCategory(){
+    /**
+     * Get category int.
+     *
+     * @return the int
+     */
+    public int getCategory(){
 		return category;
 	}
 
-	public void setRegion(int region){
+    /**
+     * Set region.
+     *
+     * @param region the region
+     */
+    public void setRegion(int region){
 		this.region = region;
 	}
 
-	public int getRegion(){
+    /**
+     * Get region int.
+     *
+     * @return the int
+     */
+    public int getRegion(){
 		return region;
 	}
 
-	public void setHuman(String human){
+    /**
+     * Set human.
+     *
+     * @param human the human
+     */
+    public void setHuman(String human){
 		this.human = human;
 	}
 
-	public String getHuman(){
+    /**
+     * Get human string.
+     *
+     * @return the string
+     */
+    public String getHuman(){
 		return human;
 	}
 
-	public void setM(int M){
+    /**
+     * Set m.
+     *
+     * @param M the m
+     */
+    public void setM(int M){
 		this.M = M;
 	}
 
-	public int getM(){
+    /**
+     * Get m int.
+     *
+     * @return the int
+     */
+    public int getM(){
 		return M;
 	}
 
-	public void setPlatform(int platform){
+    /**
+     * Set platform.
+     *
+     * @param platform the platform
+     */
+    public void setPlatform(int platform){
 		this.platform = platform;
 	}
 
-	public int getPlatform(){
+    /**
+     * Get platform int.
+     *
+     * @return the int
+     */
+    public int getPlatform(){
 		return platform;
 	}
 
