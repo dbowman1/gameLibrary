@@ -13,7 +13,7 @@
 <jsp:include page="navbar.jsp"/>
 <h2 class="text-center">Sign Up</h2>
 <div class = "container col-md-offset-3 col-md-9">
-    <form id="signUpForm" role="form" data-toggle="validator" class="form-horizontal"
+    <form id="formValid" role="form" data-toggle="validator" class="form-horizontal"
           action="userSignUp"
           method="post">
 
@@ -56,7 +56,7 @@
                 <input type="password" class="form-control" id="confirmPassword"
                        name="confirmPassword" equalTo="#password"
                        data-match="#password"
-                       data-match-error="Confirmation password does not match"
+                       data-match-error="Password does not match"
                        required data-error="Please retype your password.">
                 <div class="help-block with-errors"></div>
             </div>
@@ -65,7 +65,6 @@
         <button type="submit" class="btn btn-default col-sm-offset-3"
                 data-disable="true">Sign up
         </button>
-        <button type="reset" class="btn btn-default">Clear</button>
     </form>
 </div>
 <jsp:include page="footer.jsp"/>

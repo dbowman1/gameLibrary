@@ -14,7 +14,7 @@
 <h2 class="text-center">Account Settings</h2>
 
 <div class = "container col-md-offset-3">
-    <form id="userUpdate" role="form" data-toggle="validator" class="form-horizontal"
+    <form id="formValid" role="form" data-toggle="validator" class="form-horizontal"
           action="userAccount"
           method="post">
 
@@ -32,7 +32,8 @@
             <label class="control-label col-sm-2" for="newPassword">New Password
             </label>
             <div class="col-sm-4">
-                <input type="password" class="form-control" id="newPassword"
+                <input type="password" class="form-control"
+                       id="newPassword"
                        name="newPassword" data-error="Please provide a password."
                        required>
                 <div class="help-block with-errors"></div>
@@ -44,19 +45,19 @@
                    for="confirmPassword">Confirm New
                 Password</label>
             <div class="col-sm-4">
-                <input type="password" class="form-control" id="confirmPassword"
-                       name="confirmPassword" equalTo="#newPassword"
+                <input type="password" class="form-control"
+                       id="confirmPassword"
+                       name="confirmPassword"
                        data-match="#newPassword"
-                       data-match-error="Confirmation password does not match"
+                       data-match-error="Password does not match"
                        required data-error="Please retype your password.">
                 <div class="help-block with-errors"></div>
             </div>
         </div>
 
         <button type="submit" class="btn btn-default col-md-offset-2"
-                data-disable="true">Update Account
+                >Update Account
         </button>
-        <button type="reset" class="btn btn-default">Clear</button>
         <br/><br/>
         <div class="col-md-offset-2">
             <a href="removeAllGames"><button type="button" class="btn btn-danger">Remove All Games</button></a>

@@ -1,10 +1,10 @@
 package com.dustinbowman.controller;
 
-import com.dustinbowman.entity.Game;
 import com.dustinbowman.entity.User;
 import com.dustinbowman.persistence.ClientService;
-import com.dustinbowman.persistence.GenericDao;
+import com.dustinbowman.utilities.GamesDB;
 import com.dustinbowman.utilities.PaginateList;
+import com.dustinbowman.utilities.UsersDB;
 import com.igdb.api.GameResults;
 
 import javax.servlet.RequestDispatcher;
@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,25 +26,20 @@ public class MyLibrary extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ClientService cs = new ClientService();
 
-        GenericDao userDao = new GenericDao(User.class);
-        String user = req.getRemoteUser();
+        String userFromReq = req.getRemoteUser();
         int currentPage = 1;
 
         if(req.getParameter("page") != null){
             currentPage = Integer.parseInt(req.getParameter("page"));
         }
 
-        List<User> returnedUsers = userDao.findByPropertyEqual("userName", user);
-        User returnedUser = returnedUsers.get(0);
-        List<Integer> gameIds = new ArrayList<>();
-        boolean gameInLibrary = false;
-        if(returnedUser.getGames().size() > 0) {
-            gameInLibrary = true;
-            for(Game game : returnedUser.getGames()) {
-                gameIds.add(game.getGameId());
-            }
-        }
-        PaginateList<Integer> paginateList = new PaginateList<Integer>(gameIds, 10);
+        UsersDB usersDB = new UsersDB();
+        GamesDB gamesDB = new GamesDB();
+        User user = usersDB.userFromStringProperty(userFromReq);
+        boolean gameInLibrary = gamesDB.userHasGamesInLibrary(user);
+        List<Integer> gameIds = gamesDB.userGameIdList(gameInLibrary,user);
+
+        PaginateList<Integer> paginateList = new PaginateList<Integer>(gameIds);
         paginateList.numberOfPages();
 
 

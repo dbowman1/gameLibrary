@@ -38,9 +38,8 @@ public class UserSignUp extends HttpServlet {
         role.setRole("user");
 
         GenericDao dao = new GenericDao(User.class);
-        List<User> users;
 
-        users = dao.findByPropertyEqual("userName", user.getUserName());
+        List<User> users = dao.findByPropertyEqual("userName", user.getUserName());
 
         if(users.size() > 0) {
             //Username exists...

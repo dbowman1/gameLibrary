@@ -28,18 +28,6 @@ public class PaginateList<T> {
     }
 
     /**
-     * Instantiates a new Paginate list.
-     *
-     * @param list     the list
-     * @param pageSize the page size
-     */
-    public PaginateList(List<T> list, int pageSize) {
-        this.list = list;
-        this.pageSize = pageSize;
-        initPages();
-    }
-
-    /**
      * Gets page.
      *
      * @param pageNumber the page number
@@ -69,23 +57,6 @@ public class PaginateList<T> {
         return listOfPages.size();
     }
 
-    /**
-     * Next page list.
-     *
-     * @return the list
-     */
-    public List<T> nextPage() {
-        return getPage(++currentPage);
-    }
-
-    /**
-     * Previous page list.
-     *
-     * @return the list
-     */
-    public List<T> previousPage() {
-        return getPage(--currentPage);
-    }
 
     /**
      * Init pages.

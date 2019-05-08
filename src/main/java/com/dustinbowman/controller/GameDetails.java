@@ -1,9 +1,9 @@
 package com.dustinbowman.controller;
 
-import com.dustinbowman.entity.Game;
 import com.dustinbowman.entity.User;
 import com.dustinbowman.persistence.ClientService;
-import com.dustinbowman.persistence.GenericDao;
+import com.dustinbowman.utilities.GamesDB;
+import com.dustinbowman.utilities.UsersDB;
 import com.igdb.api.GameResults;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,16 +43,11 @@ public class GameDetails extends HttpServlet {
         logger.info("The results => " + gameList);
 
         if(req.getRemoteUser() != null ) {
-            GenericDao dao = new GenericDao(User.class);
-            List<User> users = dao.findByPropertyEqual("userName", req.getRemoteUser());
             int gameId = parseInt(id);
-            boolean userHasGame = false;
-            for (Game game : users.get(0).getGames()) {
-                if (game.getGameId() == gameId) {
-                    userHasGame = true;
-                    break;
-                }
-            }
+            UsersDB usersDB = new UsersDB();
+            GamesDB gamesDB = new GamesDB();
+            User user = usersDB.userFromStringProperty(req.getRemoteUser());
+            boolean userHasGame = gamesDB.gameInUsersLibrary(user, gameId);
             req.setAttribute("userHasGame", userHasGame);
         }
         int dateTime = gameList.get(0).getReleaseDates().get(0).getDate();
@@ -60,7 +55,6 @@ public class GameDetails extends HttpServlet {
 
         req.setAttribute("games", gameList);
         req.setAttribute("releaseDate", date);
-
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/game.jsp");
         dispatcher.forward(req,resp);
