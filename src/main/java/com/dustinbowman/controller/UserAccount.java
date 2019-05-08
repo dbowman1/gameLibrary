@@ -29,9 +29,14 @@ public class UserAccount extends HttpServlet {
 
         id = users.get(0).getId();
         User user = (User)dao.getById(id);
-        user.setPassword(req.getParameter("newPassword"));
-        dao.saveOrUpdate(user);
-        req.setAttribute("msg", "Password updated");
+        if(user.getPassword().equals(req.getParameter("originalPass"))) {
+            user.setPassword(req.getParameter("newPassword"));
+            dao.saveOrUpdate(user);
+            req.setAttribute("msg", "Password updated");
+        } else {
+            req.setAttribute("msg", "Current password is wrong please try again");
+        }
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/account.jsp");
         dispatcher.forward(req, resp);
     }
