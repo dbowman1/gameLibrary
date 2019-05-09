@@ -58,3 +58,4 @@ all the information in one place instead of looking in multiple different locati
 ### [Project Plan](ProjectPlan.md)
 
 ### [Time Log](DesignDocuments/timeLog.md)
+### [Video Demo](https://www.youtube.com/watch?v=eHlguPU_qLw)
