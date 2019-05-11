@@ -14,13 +14,25 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The type User dao test.
+ */
 public class UserDaoTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+    /**
+     * The Dao.
+     */
     GenericDao dao;
+    /**
+     * The Users.
+     */
     List<User> users;
 
 
+    /**
+     * Sets up.
+     */
     @BeforeEach
     void setUp() {
         Database database = Database.getInstance();
@@ -29,12 +41,18 @@ public class UserDaoTest {
         users = dao.getAll();
     }
 
+    /**
+     * Delete user.
+     */
     @Test
     public void deleteUser() {
         dao.delete(dao.getById(1));
         assertNull(dao.getById(1));
     }
 
+    /**
+     * Gets user by id.
+     */
     @Test
     public void getUserById() {
         User user = users.get(0);
@@ -44,6 +62,9 @@ public class UserDaoTest {
 
     }
 
+    /**
+     * Gets all users success.
+     */
     @Test
     public void getAllUsersSuccess() {
         assertTrue(users.size() > 0);
@@ -51,6 +72,9 @@ public class UserDaoTest {
         assertFalse(users.get(0).getUserName().equals(""));
     }
 
+    /**
+     * Test delete user.
+     */
     @Test
     public void testDeleteUser() {
         int sizeBeforeDelete = dao.getAll().size();
@@ -68,6 +92,9 @@ public class UserDaoTest {
         assertNull(deletedUser);
     }
 
+    /**
+     * Test update user.
+     */
     @Test
     public void testUpdateUser() {
         User user = users.get(0);
@@ -87,6 +114,9 @@ public class UserDaoTest {
     }
 
 
+    /**
+     * Test insert with role.
+     */
     @Test
     public void testInsertWithRole() {
         int insertedUser;
@@ -110,6 +140,9 @@ public class UserDaoTest {
         logger.debug(retrievedUser.getRoles());
     }
 
+    /**
+     * Test add game to user.
+     */
     @Test
     public void testAddGameToUser() {
         User user = users.get(0);
@@ -127,6 +160,9 @@ public class UserDaoTest {
         assertEquals(8, user.getGames().size());
     }
 
+    /**
+     * Test multiple user same game.
+     */
     @Test
     public void testMultipleUserSameGame() {
         User userOne = users.get(0);
@@ -147,6 +183,9 @@ public class UserDaoTest {
         assertEquals(2 , userTwo.getGames().size());
     }
 
+    /**
+     * Test game already in db to user.
+     */
     @Test
     public void testGameAlreadyInDBToUser() {
         User user = users.get(2);
@@ -163,6 +202,9 @@ public class UserDaoTest {
         assertEquals(1, user.getGames().size());
     }
 
+    /**
+     * Test remove game from user.
+     */
     @Test
     public void testRemoveGameFromUser() {
         User user = users.get(0);
@@ -185,6 +227,9 @@ public class UserDaoTest {
         assertEquals(sizeBeforeRemove -1, retrievedUser.getGames().size());
     }
 
+    /**
+     * Test remove all games from user.
+     */
     @Test
     public void testRemoveAllGamesFromUser() {
         User user = users.get(0);
@@ -199,6 +244,9 @@ public class UserDaoTest {
 
     }
 
+    /**
+     * Test user exist.
+     */
     @Test
     public void testUserExist() {
         users = dao.findByPropertyEqual("userName", "username");

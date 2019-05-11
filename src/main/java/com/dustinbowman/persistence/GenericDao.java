@@ -101,7 +101,7 @@ public class GenericDao<T> {
      *
      * @param propertyName the property name.
      * @param value        the value by which to find.
-     * @return list
+     * @return list list
      */
     public List<T> findByPropertyEqual(String propertyName, Object value) {
         Session session = getSession();

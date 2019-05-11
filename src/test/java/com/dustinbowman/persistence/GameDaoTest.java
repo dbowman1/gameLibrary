@@ -15,14 +15,29 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+/**
+ * The type Game dao test.
+ */
 public class GameDaoTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+    /**
+     * The Dao.
+     */
     GenericDao dao;
+    /**
+     * The Game.
+     */
     Game game;
+    /**
+     * The Games.
+     */
     List<Game> games;
 
 
+    /**
+     * Sets up.
+     */
     @BeforeEach
     public void setUp() {
         Database database = Database.getInstance();
@@ -32,6 +47,9 @@ public class GameDaoTest {
 
     }
 
+    /**
+     * Test create.
+     */
     @Test
     public void testCreate() {
         Game game = new Game();
@@ -42,6 +60,9 @@ public class GameDaoTest {
         assertEquals(gameCreated, game);
     }
 
+    /**
+     * Test get.
+     */
     @Test
     public void testGet() {
         Game game = games.get(0);
@@ -50,6 +71,9 @@ public class GameDaoTest {
         assertEquals(game,actualGame);
     }
 
+    /**
+     * Test get all.
+     */
     @Test
     public void testGetAll() {
         List<Game> gameList = dao.getAll();
@@ -58,6 +82,9 @@ public class GameDaoTest {
         assertEquals(4, games.size());
     }
 
+    /**
+     * Test update.
+     */
     @Test
     public void testUpdate() {
         Game game = games.get(3);
@@ -69,6 +96,9 @@ public class GameDaoTest {
 
     }
 
+    /**
+     * Test delete.
+     */
     @Test
     public void testDelete() {
         game = games.get(3);

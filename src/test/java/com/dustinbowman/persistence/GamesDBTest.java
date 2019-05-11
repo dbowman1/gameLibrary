@@ -12,15 +12,42 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The type Games db test.
+ */
 public class GamesDBTest {
+    /**
+     * The Games db.
+     */
     GamesDB gamesDB;
+    /**
+     * The G dao.
+     */
     GenericDao gDao;
+    /**
+     * The Dao.
+     */
     GenericDao dao;
+    /**
+     * The Games.
+     */
     List<Game> games;
+    /**
+     * The Users.
+     */
     List<User> users;
+    /**
+     * The User.
+     */
     User user;
+    /**
+     * The Game.
+     */
     Game game;
 
+    /**
+     * Sets .
+     */
     @BeforeEach
     public void setup() {
         Database database = Database.getInstance();
@@ -34,6 +61,9 @@ public class GamesDBTest {
         user = users.get(0);
     }
 
+    /**
+     * Test convert int.
+     */
     @Test
     public void testConvertInt() {
         String one = "1";
@@ -41,6 +71,9 @@ public class GamesDBTest {
         assertEquals(1, oneInt);
     }
 
+    /**
+     * Test user has games in library.
+     */
     @Test
     public void testUserHasGamesInLibrary() {
         List<User> users = dao.getAll();
@@ -50,6 +83,9 @@ public class GamesDBTest {
         assertEquals(true, hasGames);
     }
 
+    /**
+     * Test user game id list.
+     */
     @Test
     public void testUserGameIdList() {
         List<Integer> gameIds;
@@ -57,12 +93,18 @@ public class GamesDBTest {
         assertTrue(gameIds.size() > 0);
     }
 
+    /**
+     * Test get game from game id.
+     */
     @Test
     public void testGetGameFromGameId() {
         List<Game> game = gamesDB.getGameFromGameId("12345");
         assertTrue(game.size() == 1);
     }
 
+    /**
+     * Test add game to user.
+     */
     @Test
     public void testAddGameToUser() {
         List<Game> gameList = gamesDB.getGameFromGameId("42");
@@ -70,6 +112,9 @@ public class GamesDBTest {
         assertEquals("Test Game added to your library.", msg);
     }
 
+    /**
+     * Test add game in db.
+     */
     @Test
     public void testAddGameInDB() {
         List<Game> gameList = gamesDB.getGameFromGameId("24");
@@ -77,6 +122,9 @@ public class GamesDBTest {
         assertEquals("Test Game is already in your library.", msg);
     }
 
+    /**
+     * Test add game in db not in users.
+     */
     @Test
     public void testAddGameInDBNotInUsers() {
         List<Game> gameList = gamesDB.getGameFromGameId("67");
@@ -84,24 +132,36 @@ public class GamesDBTest {
         assertEquals("Test Game added to your library.", msg);
     }
 
+    /**
+     * Test game from req.
+     */
     @Test
     public void testGameFromReq() {
         Game game = gamesDB.getGameFromReq("12");
         assertEquals(12, game.getGameId());
     }
 
+    /**
+     * Test remove game from user not in user db.
+     */
     @Test
     public void testRemoveGameFromUserNotInUserDB() {
         String msg = gamesDB.removeGameFromUser(user.getUserName(), "67","Test");
         assertEquals("Test does not exist in your library.", msg);
     }
 
+    /**
+     * Test remove game from user.
+     */
     @Test
     public void testRemoveGameFromUser() {
         String msg = gamesDB.removeGameFromUser(user.getUserName(), "12","Game 12");
         assertEquals("Game 12 was successfully removed from your library.", msg);
     }
 
+    /**
+     * Test remove all games from user.
+     */
     @Test
     public void testRemoveAllGamesFromUser() {
         String msg = gamesDB.removeAllGamesFromUser(user);
@@ -110,6 +170,9 @@ public class GamesDBTest {
         assertEquals("No Games in library...", afterRemovedMsg);
     }
 
+    /**
+     * Test game in user library.
+     */
     @Test
     public void testGameInUserLibrary() {
         boolean userHasGame = gamesDB.gameInUsersLibrary(user, 12);

@@ -12,11 +12,23 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The type Role dao test.
+ */
 public class RoleDaoTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
+    /**
+     * The Dao.
+     */
     GenericDao dao;
+    /**
+     * The Roles.
+     */
     List<Role> roles;
 
+    /**
+     * Sets up.
+     */
     @BeforeEach
     void setUp() {
         Database database = Database.getInstance();
@@ -25,12 +37,18 @@ public class RoleDaoTest {
         roles = dao.getAll();
     }
 
+    /**
+     * Delete role.
+     */
     @Test
     public void deleteRole() {
         dao.delete(dao.getById(1));
         assertNull(dao.getById(1));
     }
 
+    /**
+     * Gets role by id.
+     */
     @Test
     public void getRoleById() {
         Role role = roles.get(0);
@@ -38,6 +56,9 @@ public class RoleDaoTest {
         assertEquals(role, returnedRole);
     }
 
+    /**
+     * Gets all user roles.
+     */
     @Test
     public void getAllUserRoles() {
         roles = dao.findByPropertyEqual("role", "user");
@@ -46,6 +67,9 @@ public class RoleDaoTest {
         logger.debug(roles.size());
     }
 
+    /**
+     * Update role.
+     */
     @Test
     public void updateRole() {
         Role role = roles.get(0);
@@ -56,6 +80,9 @@ public class RoleDaoTest {
         assertEquals(updatedRole, role);
     }
 
+    /**
+     * Add role.
+     */
     @Test
     public void addRole() {
         GenericDao userDao = new GenericDao(User.class);

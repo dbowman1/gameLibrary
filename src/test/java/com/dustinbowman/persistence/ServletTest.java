@@ -17,6 +17,9 @@ import java.io.IOException;
 import static org.mockito.Mockito.*;
 
 
+/**
+ * The type Servlet test.
+ */
 public class ServletTest {
 //    Testing out servlet test...
 //    @Mock

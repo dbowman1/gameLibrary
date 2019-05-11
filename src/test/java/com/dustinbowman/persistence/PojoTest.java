@@ -8,8 +8,14 @@ import static com.google.code.beanmatchers.BeanMatchers.*;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+/**
+ * The type Pojo test.
+ */
 public class PojoTest {
 
+    /**
+     * Test art work.
+     */
     @Test
     public void testArtWork() {
         assertThat(ArtworksItem.class, allOf(
@@ -21,6 +27,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test cover.
+     */
     @Test
     public void testCover() {
         assertThat(Cover.class, allOf(
@@ -32,6 +41,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test game results.
+     */
     @Test
     public void testGameResults() {
         assertThat(GameResults.class, allOf(
@@ -43,6 +55,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test platforms item.
+     */
     @Test
     public void testPlatformsItem() {
         assertThat(PlatformsItem.class, allOf(
@@ -54,6 +69,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test release dates.
+     */
     @Test
     public void testReleaseDates() {
         assertThat(ReleaseDatesItem.class, allOf(
@@ -65,6 +83,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test screen shots.
+     */
     @Test
     public void testScreenShots() {
         assertThat(ScreenshotsItem.class, allOf(
@@ -76,6 +97,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test themes.
+     */
     @Test
     public void testThemes() {
         assertThat(ThemesItem.class, allOf(
@@ -87,6 +111,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test video.
+     */
     @Test
     public void testVideo() {
         assertThat(VideosItem.class, allOf(
@@ -98,6 +125,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test websites.
+     */
     @Test
     public void testWebsites() {
         assertThat(WebsitesItem.class, allOf(
@@ -109,6 +139,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test similar game.
+     */
     @Test
     public void testSimilarGame() {
         assertThat(SimilarGamesItem.class, allOf(
@@ -120,6 +153,9 @@ public class PojoTest {
         ));
     }
 
+    /**
+     * Test game.
+     */
     @Test
     public void testGame() {
         assertThat(Game.class, hasValidGettersAndSetters());

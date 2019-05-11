@@ -16,6 +16,9 @@ import java.util.Properties;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
+/**
+ * The type Test game api.
+ */
 public class TestGameApi implements PropertiesLoader {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -23,6 +26,9 @@ public class TestGameApi implements PropertiesLoader {
     private ClientService cs;
 
 
+    /**
+     * Sets up.
+     */
     @BeforeEach
     void setUp() {
         Properties properties = loadProperties("/config.properties");
@@ -36,6 +42,9 @@ public class TestGameApi implements PropertiesLoader {
     }
 
 
+    /**
+     * Test game api json.
+     */
     @Test
     public void testGameApiJson() {
         ClientService cs = new ClientService();
@@ -47,6 +56,9 @@ public class TestGameApi implements PropertiesLoader {
 
     }
 
+    /**
+     * Test api new game.
+     */
     @Test
     public void testApiNewGame() {
         String params = "fields name, release_dates.*;where platforms = 48 & release_dates.date > 1538129354; sort date asc; limit 10;";
