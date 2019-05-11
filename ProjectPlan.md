@@ -59,16 +59,16 @@
 ### Week 9
 - [x] Weekly journal entry
 - [x] Review and incorporate feedback from Checkpoint 3.
-- [ ] Carefully review code for standards and best practices - use a code quality tool? 
+- [x] Carefully review code for standards and best practices - use a code quality tool? 
 
 ### Week 8
 - [x] Weekly journal entry
 - [x] Implement paging of search results
-- [ ] Code review
+- [x] Code review
 
 ### Week 9
 - [x] Weekly journal entry
-- [ ] Add password reset/reminder functionality
+- [x] Add password reset/reminder functionality
 
 ### Week 10
 - [x] Weekly journal entry
@@ -78,27 +78,27 @@
 - [x] Weekly journal entry
 
 ### Week 12 - Team project due
-- [ ] Weekly journal entry
-- [ ] Review indie project and create list of todos
+- [x] Weekly journal entry
+- [x] Review indie project and create list of todos
 
 ### Week 13
-- [ ] Weekly journal entry
-- [ ] Complete todos identified in week 12
-- [ ] Prepare for week 13 peer code reviews
-- [ ] Code quality check
-- [ ] Review rubric to make sure I'm on target
+- [x] Weekly journal entry
+- [x] Complete todos identified in week 12
+- [x] Prepare for week 13 peer code reviews
+- [x] Code quality check
+- [x] Review rubric to make sure I'm on target
 
 ### Week 14
-- [ ] Weekly journal entry
-- [ ] Create final presentation
+- [x] Weekly journal entry
+- [x] Create final presentation
 
 ### Week 15
-- [ ] Final Presentation
-- [ ] Create video
-- [ ] Finalize all documentation
-- [ ] Code quality check
+- [x] Final Presentation
+- [x] Create video
+- [x] Finalize all documentation
+- [x] Code quality check
 
 ### Week 16
-- [ ] Weekly journal entry
-- [ ] Final touches before code complete
+- [x] Weekly journal entry
+- [x] Final touches before code complete
 
