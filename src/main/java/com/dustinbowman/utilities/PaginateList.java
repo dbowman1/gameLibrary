@@ -1,4 +1,5 @@
 package com.dustinbowman.utilities;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,11 +12,9 @@ import java.util.List;
 public class PaginateList<T> {
 
     private static final int DEFAULT_PAGE_SIZE = 10;
-
     private List<T> list;
     private List<List<T>> listOfPages;
     private int pageSize = DEFAULT_PAGE_SIZE;
-    private int currentPage = 0;
 
     /**
      * Instantiates a new Paginate list.
@@ -40,7 +39,6 @@ public class PaginateList<T> {
             return Collections.emptyList();
         }
 
-        currentPage = pageNumber;
         return listOfPages.get(--pageNumber);
     }
 

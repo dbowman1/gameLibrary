@@ -2,6 +2,8 @@ package com.dustinbowman.controller;
 
 import com.dustinbowman.entity.User;
 import com.dustinbowman.persistence.GenericDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,6 +20,7 @@ import static java.lang.Integer.parseInt;
  */
 @WebServlet (name = "DeleteUser", urlPatterns = {"/deleteUser"})
 public class DeleteUser extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,6 +30,7 @@ public class DeleteUser extends HttpServlet {
         int userId = parseInt(strId);
         User user = (User)dao.getById(userId);
         dao.delete(user);
+        logger.info("User deleted: " + user);
 
         req.setAttribute("msg", user.getUserName() + " deleted...");
         RequestDispatcher dispatcher = req.getRequestDispatcher("/viewUsers");

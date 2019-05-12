@@ -3,6 +3,8 @@ package com.dustinbowman.utilities;
 import com.dustinbowman.entity.Game;
 import com.dustinbowman.entity.User;
 import com.dustinbowman.persistence.GenericDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ import static java.lang.Integer.parseInt;
  * The type Games db.
  */
 public class GamesDB {
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
      * Convert id to int int.
@@ -35,6 +38,7 @@ public class GamesDB {
         if(user.getGames().size() > 0 ) {
             haveGames = true;
         }
+        logger.info("User " + user.getUserName() + " has games? " + haveGames);
         return haveGames;
     }
 
@@ -52,6 +56,7 @@ public class GamesDB {
                 gameIds.add(game.getGameId());
             }
         }
+        logger.info(user.getUserName() + " game ids " + gameIds);
         return gameIds;
     }
 
@@ -97,6 +102,7 @@ public class GamesDB {
             uDb.saveOrUpdateUser(user);
             msg = gameName + " added to your library.";
         }
+        logger.info("User " + user.getUserName() + ": " + msg);
         return msg;
     }
 
@@ -109,6 +115,7 @@ public class GamesDB {
      */
     public Game getGameFromReq(String gameId) {
         List<Game> games = getGameFromGameId(gameId);
+        logger.info("Game: " + games.get(0));
         return games.get(0);
     }
 
@@ -133,6 +140,7 @@ public class GamesDB {
         } else {
             msg = gameName + " does not exist in your library.";
         }
+        logger.info(user.getUserName() + " " + msg);
         return msg;
     }
 
@@ -152,6 +160,7 @@ public class GamesDB {
         } else {
             msg = "No Games in library...";
         }
+        logger.info(user.getUserName() + " => " + msg);
         return msg;
     }
 
@@ -170,6 +179,7 @@ public class GamesDB {
                 break;
             }
         }
+        logger.info(user.getUserName() + " games in library? => " + userHasGame);
         return userHasGame;
     }
 

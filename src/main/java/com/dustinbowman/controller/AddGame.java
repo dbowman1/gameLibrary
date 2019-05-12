@@ -4,6 +4,8 @@ import com.dustinbowman.entity.Game;
 import com.dustinbowman.entity.User;
 import com.dustinbowman.utilities.GamesDB;
 import com.dustinbowman.utilities.UsersDB;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,6 +22,7 @@ import java.util.List;
  */
 @WebServlet (name = "AddGame", urlPatterns = {"/addGame"})
 public class AddGame extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,6 +42,7 @@ public class AddGame extends HttpServlet {
 
         String msg = gamesDB.addGameToUser(games,user, gameName, id);
         req.setAttribute("msg", msg);
+        logger.info(msg);
 
         req.setAttribute("gameID", id);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/gameStatusSuccess.jsp");

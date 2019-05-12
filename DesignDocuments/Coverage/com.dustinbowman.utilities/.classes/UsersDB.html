@@ -1,0 +1,146 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: UsersDB</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.dustinbowman.utilities</a> ]
+</div>
+
+<h1>Coverage Summary for Class: UsersDB (com.dustinbowman.utilities)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UsersDB</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/ 14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.dustinbowman.utilities;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.dustinbowman.entity.User;
+<i>4</i>&nbsp;import com.dustinbowman.persistence.GenericDao;
+<i>5</i>&nbsp;import org.apache.logging.log4j.LogManager;
+<i>6</i>&nbsp;import org.apache.logging.log4j.Logger;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import java.util.List;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;/**
+<i>11</i>&nbsp; * The type Users db.
+<i>12</i>&nbsp; */
+<b class="fc"><i>13</i>&nbsp;public class UsersDB {</b>
+<b class="fc"><i>14</i>&nbsp;    private final Logger logger = LogManager.getLogger(this.getClass());</b>
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    /**
+<i>17</i>&nbsp;     * Save or update user.
+<i>18</i>&nbsp;     *
+<i>19</i>&nbsp;     * @param user the user
+<i>20</i>&nbsp;     */
+<i>21</i>&nbsp;    public void saveOrUpdateUser(User user) {
+<b class="fc"><i>22</i>&nbsp;        GenericDao dao = new GenericDao(User.class);</b>
+<b class="fc"><i>23</i>&nbsp;        dao.saveOrUpdate(user);</b>
+<b class="fc"><i>24</i>&nbsp;        logger.info(user.getUserName() + &quot; save/updated&quot;);</b>
+<b class="fc"><i>25</i>&nbsp;    }</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    /**
+<i>28</i>&nbsp;     * Gets list of user.
+<i>29</i>&nbsp;     *
+<i>30</i>&nbsp;     * @param userName the user name
+<i>31</i>&nbsp;     * @return the list of user
+<i>32</i>&nbsp;     */
+<i>33</i>&nbsp;    public List&lt;User&gt; getListOfUser(String userName) {
+<b class="fc"><i>34</i>&nbsp;        GenericDao dao = new GenericDao(User.class);</b>
+<b class="fc"><i>35</i>&nbsp;        return dao.findByPropertyEqual(&quot;userName&quot;, userName);</b>
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    /**
+<i>39</i>&nbsp;     * User from string property user.
+<i>40</i>&nbsp;     *
+<i>41</i>&nbsp;     * @param userString the user string
+<i>42</i>&nbsp;     * @return the user
+<i>43</i>&nbsp;     */
+<i>44</i>&nbsp;    public User userFromStringProperty(String userString) {
+<b class="fc"><i>45</i>&nbsp;        GenericDao dao = new GenericDao(User.class);</b>
+<b class="fc"><i>46</i>&nbsp;        List&lt;User&gt; users = dao.findByPropertyEqual(&quot;userName&quot;, userString);</b>
+<b class="fc"><i>47</i>&nbsp;        return users.get(0);</b>
+<i>48</i>&nbsp;    }
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    /**
+<i>52</i>&nbsp;     * Gets user from req.
+<i>53</i>&nbsp;     *
+<i>54</i>&nbsp;     * @param userName the user name
+<i>55</i>&nbsp;     * @return the user from req
+<i>56</i>&nbsp;     */
+<i>57</i>&nbsp;    public User getUserFromReq(String userName) {
+<b class="fc"><i>58</i>&nbsp;        GenericDao dao = new GenericDao(User.class);</b>
+<b class="fc"><i>59</i>&nbsp;        List&lt;User&gt; users = dao.findByPropertyEqual(&quot;userName&quot;, userName);</b>
+<b class="fc"><i>60</i>&nbsp;        return users.get(0);</b>
+<i>61</i>&nbsp;    }
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-05-12 17:31</div>
+</div>
+</body>
+</html>

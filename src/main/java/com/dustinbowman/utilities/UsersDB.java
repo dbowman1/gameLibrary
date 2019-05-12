@@ -2,6 +2,8 @@ package com.dustinbowman.utilities;
 
 import com.dustinbowman.entity.User;
 import com.dustinbowman.persistence.GenericDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -9,6 +11,8 @@ import java.util.List;
  * The type Users db.
  */
 public class UsersDB {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     /**
      * Save or update user.
      *
@@ -17,6 +21,7 @@ public class UsersDB {
     public void saveOrUpdateUser(User user) {
         GenericDao dao = new GenericDao(User.class);
         dao.saveOrUpdate(user);
+        logger.info(user.getUserName() + " save/updated");
     }
 
     /**
