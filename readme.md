@@ -29,19 +29,15 @@ all the information in one place instead of looking in multiple different locati
 * Web Services consumed using Java
   * IGDB for video game metadata; Release dates, descriptions etc..
 * CSS 
-  * Bootstrap or Materialize
+  * Bootstrap
 * Data Validation
   * Bootstrap Validator for front end
-  * Explore Hibernate's validation
 * Logging
   * Log4J2 
 * Hosting
   * AWS
 * Independent Research Topic/s
-  * CI tools in AWS
-  * Materialize
-  * Hibernate Validation
-  * Hibernate Search
+  *Lombok
   * Mock
 * Project Lombok to eliminate boilerplate code like getters/setters/equals
 * Unit Testing
